@@ -75,17 +75,77 @@ def evaluating_model_using_the_bbq_benchmark(
 
 
 ## Evidence multi_ling_BM
-@jpipe(consume=[], produce=[])
+@jpipe(consume=[], produce=["eval_configuration"])
 def multilingual_benchmark_is_present(produce: Callable[[str, Any], None]) -> bool:
+    EXPECTED_PRETRAINING_BENCHMARKS_ = [
+        # MLMM Hellaswag
+        "mlmm_hellaswag_ara_cf",
+        "mlmm_hellaswag_rus_cf",
+        "mlmm_hellaswag_zho_cf",
+        "mlmm_hellaswag_deu_cf",
+        "mlmm_hellaswag_fra_cf",
+        "mlmm_hellaswag_ita_cf",
+        "mlmm_hellaswag_por_cf",
+        "mlmm_hellaswag_spa_cf",
+        # Belebele
+        "belebele_arb_Arab_cf",
+        "belebele_rus_Cyrl_cf",
+        "belebele_zho_Hans_cf",
+        "belebele_deu_Latn_cf",
+        "belebele_fra_Latn_cf",
+        "belebele_ita_Latn_cf",
+        "belebele_por_Latn_cf",
+        "belebele_spa_Latn_cf",
+        "belebele_eng_Latn_cf",
+        # Global MMLU (CF)
+        "global_mmlu_ca_ara_cf",
+        "global_mmlu_ca_rus_cf",
+        "global_mmlu_ca_zho_cf",
+        "global_mmlu_ca_deu_cf",
+        "global_mmlu_ca_fra_cf",
+        "global_mmlu_ca_ita_cf",
+        "global_mmlu_ca_por_cf",
+        "global_mmlu_ca_spa_cf",
+        # Flores200
+        "flores200:fra_Latn-eng_Latn",
+        "flores200:eng_Latn-fra_Latn",
+        "flores200:spa_Latn-eng_Latn",
+        "flores200:eng_Latn-spa_Latn",
+        "flores200:deu_Latn-eng_Latn",
+        "flores200:eng_Latn-deu_Latn",
+        "flores200:ita_Latn-eng_Latn",
+        "flores200:eng_Latn-ita_Latn",
+        "flores200:por_Latn-eng_Latn",
+        "flores200:eng_Latn-por_Latn",
+        "flores200:zho_Hans-eng_Latn",
+        "flores200:eng_Latn-zho_Hans",
+        "flores200:rus_Cyrl-eng_Latn",
+        "flores200:eng_Latn-rus_Cyrl",
+        "flores200:arb_Arab-eng_Latn",
+        "flores200:eng_Latn-arb_Arab",
+    ]
+
+    with open(f"{RESOURCES_DIR}/eval/smollm3_base.txt") as f:
+        try:
+            eval_configuration = f.read()
+            # comparing the listed benchmarks with the expected supported languages
+            remaining = [
+                e
+                for e in EXPECTED_PRETRAINING_BENCHMARKS_
+                if f"lighteval|{e}" not in eval_configuration
+            ]
+            assert not remaining, f"missing language benchmark(s) {remaining} in eval"
+
+            produce("eval_configuration", eval_configuration)
+        except yaml.YAMLError as exc:
+            print(exc)
     return True
 
 
 ## Evidence training_code
 @jpipe(consume=[], produce=["training_code"])
 def training_code_is_present(produce: Callable[[str, Any], None]) -> bool:
-    EXPECTED_TRAIN_SCRIPT_LOCATION = (
-        "https://raw.githubusercontent.com/huggingface/nanotron/refs/heads/main/run_train.py"
-    )
+    EXPECTED_TRAIN_SCRIPT_LOCATION = "https://raw.githubusercontent.com/huggingface/nanotron/refs/heads/main/run_train.py"
 
     training_code_query = httpx.get(EXPECTED_TRAIN_SCRIPT_LOCATION)
     training_code_query.raise_for_status()
