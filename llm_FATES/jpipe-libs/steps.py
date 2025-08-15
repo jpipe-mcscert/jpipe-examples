@@ -2,52 +2,88 @@
 ## Justification final
 ######
 
+from jpipe_runner.framework.decorators.jpipe_decorator import jpipe
+
+
+################
+## Conclusion ##
+################
+
 ## Conclusion c
+@jpipe(consume=[])
 def fairness_exists() -> bool:
     return True
 
-## Evidence multi_ling_BM
-def multilingual_benchmark_is_present() -> bool:
-    return True
+
+###############
+## Strategy  ##
+###############
 
 ## Strategy training
-def training_model_using_the_multilingual_dataset() -> bool:
+@jpipe(consume=[], produce=[])
+def training_model_using_the_multilingual_dataset(produce) -> bool:
     return True
 
-## Evidence training_code
-def training_code_is_present() -> bool:
-    return True
 
 ## Strategy testing_multi_ling
-def evaluating_model_using_the_multilingual_benchmark() -> bool:
+@jpipe(consume=[], produce=[])
+def evaluating_model_using_the_multilingual_benchmark(produce) -> bool:
     return True
+
 
 ## Strategy fairness_impl_methods
-def implementing_fairness_within_model() -> bool:
+@jpipe(consume=[], produce=[])
+def implementing_fairness_within_model(produce) -> bool:
     return True
 
-## Evidence BBQ_BM
-def bbq_benchmark_is_present() -> bool:
-    return True
 
 ## Strategy AND
-def and_() -> bool:
+@jpipe(consume=[], produce=[])
+def and_(produce) -> bool:
     return True
 
-## Evidence multi_ling_DS
-def multilingual_dataset_is_present() -> bool:
-    return True
 
 ## Strategy fairness_exe_methods
-def executing_fairness_benchmarks() -> bool:
+@jpipe(consume=[], produce=[])
+def executing_fairness_benchmarks(produce) -> bool:
     return True
+
 
 ## Strategy testing_BBQ
-def evaluating_model_using_the_bbq_benchmark() -> bool:
+@jpipe(consume=[], produce=[])
+def evaluating_model_using_the_bbq_benchmark(produce) -> bool:
     return True
+
+
+###############
+## Evidence  ##
+###############
+
+## Evidence multi_ling_BM
+@jpipe(consume=[], produce=[])
+def multilingual_benchmark_is_present(produce) -> bool:
+    return True
+
+
+## Evidence training_code
+@jpipe(consume=[], produce=[])
+def training_code_is_present(produce) -> bool:
+    return True
+
+
+## Evidence BBQ_BM
+@jpipe(consume=[], produce=[])
+def bbq_benchmark_is_present(produce) -> bool:
+    return True
+
+
+## Evidence multi_ling_DS
+@jpipe(consume=[], produce=[])
+def multilingual_dataset_is_present(produce) -> bool:
+    return True
+
 
 ## Evidence evaluated_code
-def evaluation_code_is_present() -> bool:
+@jpipe(consume=[], produce=[])
+def evaluation_code_is_present(produce) -> bool:
     return True
-
-
