@@ -1,6 +1,9 @@
 name: jPipe Runner Workflow
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
 
 permissions:
