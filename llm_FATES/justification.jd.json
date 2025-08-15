@@ -1,0 +1,161 @@
+{
+  "elements": [
+    {
+      "id": "c",
+      "label": "Fairness exists",
+      "type": "conclusion"
+    },
+    {
+      "id": "multi_ling_BM",
+      "label": "Multilingual benchmark is present",
+      "type": "evidence"
+    },
+    {
+      "id": "BBQ_BM_accept",
+      "label": "BBQ benchmark metric is acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "fairness_evaluated",
+      "label": "Fairnesss evaluated",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "training",
+      "label": "Training model using the Multilingual dataset",
+      "type": "strategy"
+    },
+    {
+      "id": "training_code",
+      "label": "Training code is present",
+      "type": "evidence"
+    },
+    {
+      "id": "testing_multi_ling",
+      "label": "Evaluating model using the multilingual benchmark",
+      "type": "strategy"
+    },
+    {
+      "id": "fairness_impl_methods",
+      "label": "Implementing fairness within model",
+      "type": "strategy"
+    },
+    {
+      "id": "BBQ_BM",
+      "label": "BBQ benchmark is present",
+      "type": "evidence"
+    },
+    {
+      "id": "multi_ling_BM_accept",
+      "label": "Multilingual benchmark metric is acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "AND",
+      "label": "[AND]",
+      "type": "strategy"
+    },
+    {
+      "id": "multi_ling_DS_present",
+      "label": "Multilingual dataset is used",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "multi_ling_DS",
+      "label": "Multilingual dataset is present",
+      "type": "evidence"
+    },
+    {
+      "id": "fairness_implemented",
+      "label": "Fairnesss implemented",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "fairness_exe_methods",
+      "label": "Executing fairness benchmarks",
+      "type": "strategy"
+    },
+    {
+      "id": "testing_BBQ",
+      "label": "Evaluating model using the BBQ benchmark",
+      "type": "strategy"
+    },
+    {
+      "id": "evaluated_code",
+      "label": "Evaluation code is present",
+      "type": "evidence"
+    }
+  ],
+  "name": "final",
+  "relations": [
+    {
+      "source": "AND",
+      "target": "c"
+    },
+    {
+      "source": "testing_BBQ",
+      "target": "BBQ_BM_accept"
+    },
+    {
+      "source": "fairness_exe_methods",
+      "target": "fairness_evaluated"
+    },
+    {
+      "source": "multi_ling_DS",
+      "target": "training"
+    },
+    {
+      "source": "training_code",
+      "target": "training"
+    },
+    {
+      "source": "multi_ling_BM",
+      "target": "testing_multi_ling"
+    },
+    {
+      "source": "evaluated_code",
+      "target": "testing_multi_ling"
+    },
+    {
+      "source": "multi_ling_DS_present",
+      "target": "fairness_impl_methods"
+    },
+    {
+      "source": "testing_multi_ling",
+      "target": "multi_ling_BM_accept"
+    },
+    {
+      "source": "fairness_evaluated",
+      "target": "AND"
+    },
+    {
+      "source": "fairness_implemented",
+      "target": "AND"
+    },
+    {
+      "source": "training",
+      "target": "multi_ling_DS_present"
+    },
+    {
+      "source": "fairness_impl_methods",
+      "target": "fairness_implemented"
+    },
+    {
+      "source": "multi_ling_BM_accept",
+      "target": "fairness_exe_methods"
+    },
+    {
+      "source": "BBQ_BM_accept",
+      "target": "fairness_exe_methods"
+    },
+    {
+      "source": "BBQ_BM",
+      "target": "testing_BBQ"
+    },
+    {
+      "source": "evaluated_code",
+      "target": "testing_BBQ"
+    }
+  ],
+  "type": "justification"
+}
