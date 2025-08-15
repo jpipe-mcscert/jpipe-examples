@@ -126,19 +126,16 @@ def multilingual_benchmark_is_present(produce: Callable[[str, Any], None]) -> bo
     ]
 
     with open(f"{RESOURCES_DIR}/eval/smollm3_base.txt") as f:
-        try:
-            eval_configuration = f.read()
-            # comparing the listed benchmarks with the expected supported languages
-            remaining = [
-                e
-                for e in EXPECTED_PRETRAINING_BENCHMARKS_
-                if f"lighteval|{e}" not in eval_configuration
-            ]
-            assert not remaining, f"missing language benchmark(s) {remaining} in eval"
+        eval_configuration = f.read()
+        # comparing the listed benchmarks with the expected supported languages
+        remaining = [
+            e
+            for e in EXPECTED_PRETRAINING_BENCHMARKS_
+            if f"lighteval|{e}" not in eval_configuration
+        ]
+        assert not remaining, f"missing language benchmark(s) {remaining} in eval"
 
-            produce("eval_configuration", eval_configuration)
-        except yaml.YAMLError as exc:
-            print(exc)
+        produce("eval_configuration", eval_configuration)
     return True
 
 
@@ -184,28 +181,24 @@ def multilingual_dataset_is_present(produce: Callable[[str, Any], None]) -> bool
     ]
 
     with open(f"{RESOURCES_DIR}/pretraining/stage1_8T.yaml") as f:
-        try:
-            pretraining_stage1_run_configuration = yaml.safe_load(f)
-            # comparing the model name to be sure it is smollm3
+        pretraining_stage1_run_configuration = yaml.safe_load(f)
+        # comparing the model name to be sure it is smollm3
+        assert (
+            pretraining_stage1_run_configuration["general"]["project"]
+            == EXPECTED_SMOLLM3_MODEL_NAME
+        )
+        # comparing the listed datasets with the expected supported languages
+        dataset_configuration = pretraining_stage1_run_configuration["data_stages"][0][
+            "data"
+        ]["dataset"]
+        all_pretraining_datasets = dataset_configuration["dataset_read_path"]
+        for pretraining_language in EXPECTED_PRETRAINING_LANGUAGES:
             assert (
-                pretraining_stage1_run_configuration["general"]["project"]
-                == EXPECTED_SMOLLM3_MODEL_NAME
-            )
-            # comparing the listed datasets with the expected supported languages
-            dataset_configuration = pretraining_stage1_run_configuration["data_stages"][
-                0
-            ]["data"]["dataset"]
-            all_pretraining_datasets = dataset_configuration["dataset_read_path"]
-            for pretraining_language in EXPECTED_PRETRAINING_LANGUAGES:
-                assert (
-                    f"/scratch/smollm3-data-part1/{pretraining_language}"
-                    in all_pretraining_datasets
-                ), f"missing language [{pretraining_language}] in pretraining datasets"
-            produce("dataset_configuration", dataset_configuration)
-            return True
-        except (yaml.YAMLError, AssertionError) as exc:
-            print(exc)
-            return False
+                f"/scratch/smollm3-data-part1/{pretraining_language}"
+                in all_pretraining_datasets
+            ), f"missing language [{pretraining_language}] in pretraining datasets"
+        produce("dataset_configuration", dataset_configuration)
+    return True
 
 
 ## Evidence evaluated_code
