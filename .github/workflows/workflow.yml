@@ -45,3 +45,4 @@ jobs:
           config-file: llm_FATES/config.yaml
           library: llm_FATES/jpipe-libs/steps.py
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          python_path: python
