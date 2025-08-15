@@ -20,6 +20,17 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install system dependencies
+        if: steps.cache-apt.outputs.cache-hit != 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential \
+            graphviz \
+            libgraphviz-dev \
+            pkg-config \
+            python3-dev
+
       - name: Install python dependencies
         run: |
           pip install -r llm_FATES/requirements.txt
