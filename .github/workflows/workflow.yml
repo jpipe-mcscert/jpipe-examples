@@ -28,5 +28,5 @@ jobs:
           image_branch: "diagram-images"
           jd_file: llm_FATES/justification.jd.json
           config-file: llm_FATES/config.yaml
-          library: steps.py
+          library: llm_FATES/jpipe-libs/steps.py
           github-token: ${{ secrets.GITHUB_TOKEN }}
