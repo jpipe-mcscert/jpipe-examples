@@ -9,7 +9,7 @@ from typing import Any, Callable
 from jpipe_runner.framework.decorators.jpipe_decorator import jpipe
 
 
-RESOURCES_DIR = "/mnt/c/Users/bapti/OneDrive/Documents/Travail/CDD/MCMASTER_UNIVERSITY/Project/jpipe-examples/llm_FATES/resources"
+RESOURCES_DIR = "resources"
 
 ################
 ## Conclusion ##
