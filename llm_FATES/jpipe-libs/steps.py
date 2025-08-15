@@ -1,6 +1,7 @@
 ######
 ## Justification final
 ######
+import httpx
 import yaml
 
 from typing import Any, Callable
@@ -28,19 +29,23 @@ def fairness_exists() -> bool:
 
 ## Strategy training
 @jpipe(consume=[], produce=[])
-def training_model_using_the_multilingual_dataset(produce) -> bool:
+def training_model_using_the_multilingual_dataset(
+    produce: Callable[[str, Any], None],
+) -> bool:
     return True
 
 
 ## Strategy testing_multi_ling
 @jpipe(consume=[], produce=[])
-def evaluating_model_using_the_multilingual_benchmark(produce) -> bool:
+def evaluating_model_using_the_multilingual_benchmark(
+    produce: Callable[[str, Any], None],
+) -> bool:
     return True
 
 
 ## Strategy fairness_impl_methods
 @jpipe(consume=[], produce=[])
-def implementing_fairness_within_model(produce) -> bool:
+def implementing_fairness_within_model(produce: Callable[[str, Any], None]) -> bool:
     return True
 
 
@@ -52,13 +57,15 @@ def and_(produce) -> bool:
 
 ## Strategy fairness_exe_methods
 @jpipe(consume=[], produce=[])
-def executing_fairness_benchmarks(produce) -> bool:
+def executing_fairness_benchmarks(produce: Callable[[str, Any], None]) -> bool:
     return True
 
 
 ## Strategy testing_BBQ
 @jpipe(consume=[], produce=[])
-def evaluating_model_using_the_bbq_benchmark(produce) -> bool:
+def evaluating_model_using_the_bbq_benchmark(
+    produce: Callable[[str, Any], None],
+) -> bool:
     return True
 
 
@@ -69,19 +76,28 @@ def evaluating_model_using_the_bbq_benchmark(produce) -> bool:
 
 ## Evidence multi_ling_BM
 @jpipe(consume=[], produce=[])
-def multilingual_benchmark_is_present(produce) -> bool:
+def multilingual_benchmark_is_present(produce: Callable[[str, Any], None]) -> bool:
     return True
 
 
 ## Evidence training_code
-@jpipe(consume=[], produce=[])
-def training_code_is_present(produce) -> bool:
+@jpipe(consume=[], produce=["training_code"])
+def training_code_is_present(produce: Callable[[str, Any], None]) -> bool:
+    EXPECTED_TRAIN_SCRIPT_LOCATION = (
+        "https://raw.githubusercontent.com/huggingface/nanotron/refs/heads/main/run_train.py"
+    )
+
+    training_code_query = httpx.get(EXPECTED_TRAIN_SCRIPT_LOCATION)
+    training_code_query.raise_for_status()
+
+    produce("training_code", training_code_query.text)
+
     return True
 
 
 ## Evidence BBQ_BM
 @jpipe(consume=[], produce=[])
-def bbq_benchmark_is_present(produce) -> bool:
+def bbq_benchmark_is_present(produce: Callable[[str, Any], None]) -> bool:
     return True
 
 
@@ -133,5 +149,5 @@ def multilingual_dataset_is_present(produce: Callable[[str, Any], None]) -> bool
 
 ## Evidence evaluated_code
 @jpipe(consume=[], produce=[])
-def evaluation_code_is_present(produce) -> bool:
+def evaluation_code_is_present(produce: Callable[[str, Any], None]) -> bool:
     return True
