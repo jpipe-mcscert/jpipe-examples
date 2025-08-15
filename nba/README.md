@@ -1,2 +1,0 @@
-# NBA Score Prediction system
-
