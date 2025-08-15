@@ -135,8 +135,10 @@ def multilingual_benchmark_is_present(produce) -> bool:
         ]
         assert not remaining, f"missing language benchmark(s) {remaining} in eval"
 
+    if eval_configuration:
         produce("eval_configuration", eval_configuration)
-    return True
+        return True
+    return False
 
 
 ## Evidence training_code
