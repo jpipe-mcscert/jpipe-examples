@@ -75,8 +75,8 @@ def evaluating_model_using_the_bbq_benchmark(
 
 
 ## Evidence multi_ling_BM
-@jpipe(consume=[], produce=["eval_configuration"])
-def multilingual_benchmark_is_present(produce: Callable[[str, Any], None]) -> bool:
+@jpipe(produce=["eval_configuration"])
+def multilingual_benchmark_is_present(produce) -> bool:
     EXPECTED_PRETRAINING_BENCHMARKS_ = [
         # MLMM Hellaswag
         "mlmm_hellaswag_ara_cf",
@@ -140,8 +140,8 @@ def multilingual_benchmark_is_present(produce: Callable[[str, Any], None]) -> bo
 
 
 ## Evidence training_code
-@jpipe(consume=[], produce=["training_code"])
-def training_code_is_present(produce: Callable[[str, Any], None]) -> bool:
+@jpipe(produce=["training_code"])
+def training_code_is_present(produce) -> bool:
     EXPECTED_TRAIN_SCRIPT_LOCATION = "https://raw.githubusercontent.com/huggingface/nanotron/refs/heads/main/run_train.py"
 
     training_code_query = httpx.get(EXPECTED_TRAIN_SCRIPT_LOCATION)
