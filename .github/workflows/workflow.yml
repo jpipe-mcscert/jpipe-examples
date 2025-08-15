@@ -23,10 +23,10 @@ jobs:
       - name: Run jPipe Runner
         uses: jpipe-mcscert/jpipe-runner@main
         with:
-          version: feat/main
-          # embed_image: "true"
-          # image_branch: "diagram-images"
+          #version: feat/v3.1.0
+          #embed_image: "true"
+          #image_branch: "diagram-images"
           jd_file: llm_FATES/justification.jd.json
-          config-file: llm_FATES/config.yaml
+          #config-file: llm_FATES/config.yaml
           library: steps.py
-          # github-token: ${{ secrets.GITHUB_TOKEN }}
+          #github-token: ${{ secrets.GITHUB_TOKEN }}
