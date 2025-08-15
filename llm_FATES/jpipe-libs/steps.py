@@ -28,7 +28,7 @@ def fairness_exists() -> bool:
 
 
 ## Strategy training
-@jpipe(consume=[], produce=[])
+@jpipe(consume=["dataset_configuration", "training_code"], produce=[])
 def training_model_using_the_multilingual_dataset(
     produce: Callable[[str, Any], None],
 ) -> bool:
@@ -36,7 +36,7 @@ def training_model_using_the_multilingual_dataset(
 
 
 ## Strategy testing_multi_ling
-@jpipe(consume=[], produce=[])
+@jpipe(consume=["eval_configuration", "evaluation_procedure"], produce=[])
 def evaluating_model_using_the_multilingual_benchmark(
     produce: Callable[[str, Any], None],
 ) -> bool:
@@ -62,7 +62,7 @@ def executing_fairness_benchmarks(produce: Callable[[str, Any], None]) -> bool:
 
 
 ## Strategy testing_BBQ
-@jpipe(consume=[], produce=[])
+@jpipe(consume=["evaluation_procedure", "bbq_benchmark"], produce=[])
 def evaluating_model_using_the_bbq_benchmark(
     produce: Callable[[str, Any], None],
 ) -> bool:
@@ -156,9 +156,10 @@ def training_code_is_present(produce: Callable[[str, Any], None]) -> bool:
 
 
 ## Evidence BBQ_BM
-@jpipe(consume=[], produce=[])
+@jpipe(consume=[], produce=["bbq_benchmark"])
 def bbq_benchmark_is_present(produce: Callable[[str, Any], None]) -> bool:
-    return True
+    produce("bbq_benchmark", "TODO")
+    return False
 
 
 ## Evidence multi_ling_DS
@@ -208,6 +209,13 @@ def multilingual_dataset_is_present(produce: Callable[[str, Any], None]) -> bool
 
 
 ## Evidence evaluated_code
-@jpipe(consume=[], produce=[])
+@jpipe(consume=[], produce=["evaluation_procedure"])
 def evaluation_code_is_present(produce: Callable[[str, Any], None]) -> bool:
+    EXPECTED_EVALUATION_README_LOCATION = "https://raw.githubusercontent.com/huggingface/smollm/refs/heads/main/text/evaluation/smollm3/README.md"
+
+    evaluation_readme_query = httpx.get(EXPECTED_EVALUATION_README_LOCATION)
+    evaluation_readme_query.raise_for_status()
+
+    produce("evaluation_procedure", evaluation_readme_query.text)
+
     return True
