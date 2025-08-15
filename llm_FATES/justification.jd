@@ -1,6 +1,6 @@
 justification final {
     conclusion c is "Fairness exists"
-    strategy AND is "[AND]"
+    strategy AND is "_AND_"
     sub-conclusion fairness_implemented is "Fairnesss implemented"
     sub-conclusion fairness_evaluated is "Fairnesss evaluated"
     AND supports c
