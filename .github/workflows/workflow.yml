@@ -20,6 +20,10 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install python dependencies
+        run: |
+          pip install -r llm_FATES/requirements.txt
+
       - name: Run jPipe Runner
         uses: jpipe-mcscert/jpipe-runner@feat/v3.1.0
         with:
