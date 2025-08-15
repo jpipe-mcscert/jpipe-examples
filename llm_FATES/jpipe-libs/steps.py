@@ -9,7 +9,7 @@ from typing import Any, Callable
 from jpipe_runner.framework.decorators.jpipe_decorator import jpipe
 
 
-RESOURCES_DIR = "resources/"
+RESOURCES_DIR = "/mnt/c/Users/bapti/OneDrive/Documents/Travail/CDD/MCMASTER_UNIVERSITY/Project/jpipe-examples/llm_FATES/resources"
 
 ################
 ## Conclusion ##
@@ -30,7 +30,8 @@ def fairness_exists() -> bool:
 ## Strategy training
 @jpipe(consume=["dataset_configuration", "training_code"], produce=[])
 def training_model_using_the_multilingual_dataset(
-    produce: Callable[[str, Any], None],
+    dataset_configuration,
+    training_code
 ) -> bool:
     return True
 
@@ -38,33 +39,35 @@ def training_model_using_the_multilingual_dataset(
 ## Strategy testing_multi_ling
 @jpipe(consume=["eval_configuration", "evaluation_procedure"], produce=[])
 def evaluating_model_using_the_multilingual_benchmark(
-    produce: Callable[[str, Any], None],
+    eval_configuration,
+    evaluation_procedure
 ) -> bool:
     return True
 
 
 ## Strategy fairness_impl_methods
 @jpipe(consume=[], produce=[])
-def implementing_fairness_within_model(produce: Callable[[str, Any], None]) -> bool:
+def implementing_fairness_within_model() -> bool:
     return True
 
 
 ## Strategy AND
 @jpipe(consume=[], produce=[])
-def and_(produce) -> bool:
+def and_() -> bool:
     return True
 
 
 ## Strategy fairness_exe_methods
 @jpipe(consume=[], produce=[])
-def executing_fairness_benchmarks(produce: Callable[[str, Any], None]) -> bool:
+def executing_fairness_benchmarks() -> bool:
     return True
 
 
 ## Strategy testing_BBQ
 @jpipe(consume=["evaluation_procedure", "bbq_benchmark"], produce=[])
 def evaluating_model_using_the_bbq_benchmark(
-    produce: Callable[[str, Any], None],
+    evaluation_procedure,
+    bbq_benchmark
 ) -> bool:
     return True
 
