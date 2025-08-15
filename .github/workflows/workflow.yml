@@ -26,7 +26,7 @@ jobs:
           version: feat/50-embed-image-existing-branch
           embed_image: "true"
           image_branch: "diagram-images"
-          jd_file: justification.jd.json
+          jd_file: llm_FATES/justification.jd.json
           config-file: config.yaml
           library: steps.py
           github-token: ${{ secrets.GITHUB_TOKEN }}
