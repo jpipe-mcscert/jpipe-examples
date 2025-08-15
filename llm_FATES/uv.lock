@@ -72,21 +72,7 @@ wheels = [
 ]
 
 [[package]]
-name = "jpipe-runner"
-version = "3.0.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "networkx" },
-    { name = "pygraphviz" },
-    { name = "pyyaml" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/c8/25/267e05879c6038754cf466776a1953dabb8895ba4360dc9aba0a6a61a851/jpipe_runner-3.0.0.tar.gz", hash = "sha256:109ed80e1aa937c53ec812e57e12c97eab9420cf15405e3e49433fbd90df9e39", size = 30953, upload-time = "2025-08-11T13:32:02.998Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/0e/d8/e06f18d39668346c446552b14c4f3042f05b2ea76b09d52b910b851d72d5/jpipe_runner-3.0.0-py3-none-any.whl", hash = "sha256:991d191022da5824199e545e1532d54c9d605217de5014b81de6a8337e75e560", size = 36065, upload-time = "2025-08-11T13:32:01.63Z" },
-]
-
-[[package]]
-name = "llm-fates"
+name = "jpipe-examples-llm-fates"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
@@ -100,6 +86,20 @@ requires-dist = [
     { name = "httpx", specifier = ">=0.28.1" },
     { name = "jpipe-runner", specifier = ">=3.0.0" },
     { name = "pyyaml", specifier = ">=6.0.2" },
+]
+
+[[package]]
+name = "jpipe-runner"
+version = "3.0.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "networkx" },
+    { name = "pygraphviz" },
+    { name = "pyyaml" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/c8/25/267e05879c6038754cf466776a1953dabb8895ba4360dc9aba0a6a61a851/jpipe_runner-3.0.0.tar.gz", hash = "sha256:109ed80e1aa937c53ec812e57e12c97eab9420cf15405e3e49433fbd90df9e39", size = 30953, upload-time = "2025-08-11T13:32:02.998Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/0e/d8/e06f18d39668346c446552b14c4f3042f05b2ea76b09d52b910b851d72d5/jpipe_runner-3.0.0-py3-none-any.whl", hash = "sha256:991d191022da5824199e545e1532d54c9d605217de5014b81de6a8337e75e560", size = 36065, upload-time = "2025-08-11T13:32:01.63Z" },
 ]
 
 [[package]]
