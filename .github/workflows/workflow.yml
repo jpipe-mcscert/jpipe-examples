@@ -36,9 +36,9 @@ jobs:
           pip install -r llm_FATES/requirements.txt
 
       - name: Run jPipe Runner
-        uses: jpipe-mcscert/jpipe-runner@feat/v3.1.0
+        uses: jpipe-mcscert/jpipe-runner@feat/51-automate-branch-creation-action
         with:
-          version: feat/v3.1.0
+          version: feat/51-automate-branch-creation-action
           embed_image: "true"
           image_branch: "diagram-images"
           jd_file: llm_FATES/justification.jd.json
