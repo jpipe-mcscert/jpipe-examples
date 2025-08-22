@@ -1,0 +1,132 @@
+/*
+    Safety, privacy, and fairness (Step 1) according to the "Pyramid for healthcare chatbot evaluation framework".
+
+    https://www.medrxiv.org/content/medrxiv/early/2024/09/03/2024.07.21.24310774.full.pdf
+*/
+justification selected_mode_safety_privacy_fairness_justified {
+    // TODO: assemble the different justifications
+    
+    conclusion selected_model_matches_spf_hierarchical_framework "Selected model matches the Safety/Privacy/Fairness subset of the hierarchical framework"
+}
+
+/*
+    Privacy: protect privacy according to standards like HIPAA and GDPR, ensuring user autonomy and dignity.
+
+    https://www.medrxiv.org/content/medrxiv/early/2024/09/03/2024.07.21.24310774.full.pdf
+*/
+justification respect_of_privacy_justified {
+    // TODO: assemble the different justifications
+
+    conclusion user_privacy_is_respected "User privacy is protected to ensure user autonomy and dignity"
+}
+
+/*
+    Data Exchange: maintain privacy standards for accessing and sharing data with third359 party tools,
+            cloud platforms, and other external systems
+
+    https://www.medrxiv.org/content/medrxiv/early/2024/09/03/2024.07.21.24310774.full.pdf
+*/
+justification no_external_data_exchange {
+    
+    conclusion no_external_data_exchange "There is no external data exchange"
+
+    strategy verify_no_external_data_exchange "Verify that there is no external data exchange"
+
+    sub-conclusion model_can_run_device_airplane_mode "Model can run on a device in airplane mode"
+
+    strategy verify_model_can_run_device_airplane_mode "Verify model can run on a device in airplane mode"
+
+    evidence model_weights "Model's weights"
+
+    evidence airplane_test_results "Airplane test results"
+}
+
+/*
+    Data collection and storage: maintain privacy standards for gathering and securely storing
+            data for future use.
+
+    https://www.medrxiv.org/content/medrxiv/early/2024/09/03/2024.07.21.24310774.full.pdf
+*/
+justification data_collection_and_storage_remain_local {
+   
+    conclusion data_collection_storage_remain_local "Data collection and storage remain local"
+
+    strategy verify_data_collection_storage_remain_local "Verify that data collection and storage remain local"
+}
+
+/*
+    Data usage: maintain privacy standards for using collected data for analysis, decision
+            making, and improving chatbot algorithms
+
+    https://www.medrxiv.org/content/medrxiv/early/2024/09/03/2024.07.21.24310774.full.pdf
+*/
+justification data_usage_respects_user {
+
+    conclusion data_usage_respects_user "Data usage respects the user"
+
+    strategy verify_data_usage_respects_user "Verify that data usage respects the user"
+}
+
+/*
+    Privacy Policy: outline how an organization collects, uses, protects, and shares personal data
+
+    https://www.medrxiv.org/content/medrxiv/early/2024/09/03/2024.07.21.24310774.full.pdf
+*/
+justification privay_policy_is_respected {
+
+    conclusion privacy_policy_is_respected "The privacy policy is respected"
+
+    strategy verify_privacy_policy_is_respected "Verify that the privacy policy is respected"
+
+    sub-conclusion model_is_hipaa_compliant "Selected model is HIPAA compliant"
+
+    strategy verify_model_is_hipaa_compliant "Verify selected model is HIPAA compliant"
+
+    /*
+        Health Insurance Portability and Accountability Act of 1996 ("HIPAA"): The Standards for
+                Privacy of Individually Identifiable Health Information ("Privacy Rule") establishes,
+                for the first time, a set of national standards for the protection of certain health 
+                information. The U.S. Department of Health and Human Services ("HHS") issued the 
+                Privacy Rule to implement the requirement of the Health Insurance Portability and
+                Accountability Act of 1996 ("HIPAA"). The Privacy Rule standards address the use and
+                disclosure of individuals' health information—called "protected health information" by
+                organizations subject to the Privacy Rule — called "covered entities," as well as
+                standards for individuals' privacy rights to understand and control how their health
+                information is used.
+        
+        https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html#intro
+    */
+    evidence hipaa_document "HIPAA document"
+
+    /*
+        Basic Principle: A covered entity may not use or disclose protected health information,
+                except either: (1) as the Privacy Rule permits or requires; or (2) as
+                the individual who is the subject of the information (or the individual's
+                personal representative) authorizes in writing.
+    
+        https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html#general
+    */
+    evidence iihi_filtering_model_dev "Individually Identifiable Health information filter in model development"
+
+    /*
+        Required Disclosures: A covered entity must disclose protected health information in only
+                two situations: (a) to individuals (or their personal representatives) specifically when
+                they request access to, or an accounting of disclosures of, their protected health information;
+                and (b) to HHS when it is undertaking a compliance investigation or review or enforcement action
+
+        https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html#general
+    */
+    evidence iihi_access_protocol "IIHI access protocol document"
+}
+
+/*
+    Data Protection: implement methods to ensure privacy and prevent unauthorized access and breaches
+
+    https://www.medrxiv.org/content/medrxiv/early/2024/09/03/2024.07.21.24310774.full.pdf
+*/
+justification user_data_is_protected {
+
+    conclusion data_is_protected "User data is protected"
+
+    strategy verify_data_protection "Verify that user data is protected"
+}
