@@ -7,6 +7,7 @@ import yaml
 from typing import Any, Callable
 
 from jpipe_runner.framework.decorators.jpipe_decorator import jpipe
+from jpipe_runner.framework.decorators.contribution_decorator import contribution
 
 
 RESOURCES_DIR = "llm_FATES/resources"
@@ -165,39 +166,21 @@ def bbq_benchmark_is_present(produce: Callable[[str, Any], None]) -> bool:
 
 
 ## Evidence multi_ling_DS
-@jpipe(consume=[], produce=["dataset_configuration"])
-def multilingual_dataset_is_present(produce: Callable[[str, Any], None]) -> bool:
-    EXPECTED_SMOLLM3_MODEL_NAME = "smollm3-3B-final"
-    EXPECTED_PRETRAINING_LANGUAGES = [
-        "fw2-fra",
-        "fw2-spa",
-        "fw2-deu",
-        "fw2-ita",
-        "fw2-por",
-        "fw2-cmn",
-        "fw2-rus",
-        "fw2-fas",
-        "fw2-jpn",
-        "fw2-kor",
-        "fw2-hin",
-        "fw2-tha",
-        "fw2-vie",
-        "fw2-ell",
-    ]
-
-    with open(f"{RESOURCES_DIR}/pretraining/stage1_8T.yaml") as f:
+@jpipe(consume=["expected_smollm3_model_name", "expected_pretraining_languages", "resources_dir"], produce=["dataset_configuration"])
+def multilingual_dataset_is_present(expected_smollm3_model_name: str, expected_pretraining_languages: list[str], resources_dir: str, produce: Callable[[str, Any], None]) -> bool:
+    with open(f"{resources_dir}/pretraining/stage1_8T.yaml") as f:
         pretraining_stage1_run_configuration = yaml.safe_load(f)
         # comparing the model name to be sure it is smollm3
         assert (
             pretraining_stage1_run_configuration["general"]["project"]
-            == EXPECTED_SMOLLM3_MODEL_NAME
+            == expected_smollm3_model_name
         )
         # comparing the listed datasets with the expected supported languages
         dataset_configuration = pretraining_stage1_run_configuration["data_stages"][0][
             "data"
         ]["dataset"]
         all_pretraining_datasets = dataset_configuration["dataset_read_path"]
-        for pretraining_language in EXPECTED_PRETRAINING_LANGUAGES:
+        for pretraining_language in expected_pretraining_languages:
             assert (
                 f"/scratch/smollm3-data-part1/{pretraining_language}"
                 in all_pretraining_datasets
@@ -207,13 +190,10 @@ def multilingual_dataset_is_present(produce: Callable[[str, Any], None]) -> bool
 
 
 ## Evidence evaluated_code
-@jpipe(consume=[], produce=["evaluation_procedure"])
-def evaluation_code_is_present(produce: Callable[[str, Any], None]) -> bool:
-    EXPECTED_EVALUATION_README_LOCATION = "https://raw.githubusercontent.com/huggingface/smollm/refs/heads/main/text/evaluation/smollm3/README.md"
-
-    evaluation_readme_query = httpx.get(EXPECTED_EVALUATION_README_LOCATION)
+@jpipe(consume=["expected_evaluation_readme_location"], produce=["evaluation_procedure"])
+def evaluation_code_is_present(expected_evaluation_readme_location: str, produce) -> bool:
+    # expected_evaluation_readme_location = https://raw.githubusercontent.com/huggingface/smollm/refs/heads/main/text/evaluation/smollm3/README.md
+    evaluation_readme_query = httpx.get(expected_evaluation_readme_location)
     evaluation_readme_query.raise_for_status()
-
     produce("evaluation_procedure", evaluation_readme_query.text)
-
     return True
