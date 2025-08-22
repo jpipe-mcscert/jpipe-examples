@@ -2,6 +2,12 @@ version = 1
 revision = 3
 requires-python = ">=3.12"
 
+[manifest]
+members = [
+    "jpipe-examples-llm-fates",
+    "jpipe-examples-llm-fates-gpt-oss",
+]
+
 [[package]]
 name = "anyio"
 version = "4.10.0"
@@ -86,6 +92,21 @@ requires-dist = [
     { name = "httpx", specifier = ">=0.28.1" },
     { name = "jpipe-runner", specifier = ">=3.0.0" },
     { name = "pyyaml", specifier = ">=6.0.2" },
+]
+
+[[package]]
+name = "jpipe-examples-llm-fates-gpt-oss"
+version = "0.1.0"
+source = { virtual = "gpt-oss" }
+dependencies = [
+    { name = "httpx" },
+    { name = "jpipe-runner" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "httpx", specifier = ">=0.28.1" },
+    { name = "jpipe-runner", specifier = ">=3.0.0" },
 ]
 
 [[package]]

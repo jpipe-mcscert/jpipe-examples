@@ -1,0 +1,31 @@
+{
+  "elements": [
+    {
+      "id": "verify_prepfram_available",
+      "label": "Verifying Preparedness Framework availability",
+      "type": "strategy"
+    },
+    {
+      "id": "prepfram_document",
+      "label": "Preparedness Framework document",
+      "type": "evidence"
+    },
+    {
+      "id": "prepfram_tracked_categories",
+      "label": "Track Categories list",
+      "type": "evidence"
+    }
+  ],
+  "name": "prepared_framework",
+  "relations": [
+    {
+      "source": "prepfram_document",
+      "target": "verify_prepfram_available"
+    },
+    {
+      "source": "prepfram_tracked_categories",
+      "target": "verify_prepfram_available"
+    }
+  ],
+  "type": "justification"
+}

@@ -1,0 +1,921 @@
+{
+  "elements": [
+    {
+      "id": "and_andverstrain_impl",
+      "label": "[AND] TODO 3",
+      "type": "strategy"
+    },
+    {
+      "id": "verify_realworld_exp_error_bio_ident_corr_cap_acceptable",
+      "label": "Verify Real-world experimental errors in biological protocols identification and correction capability is acceptable",
+      "type": "strategy"
+    },
+    {
+      "id": "longform_bio_risk_questions_cap_acceptable",
+      "label": "Long-form Biological Risk Questions capability is acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "reinflearn_code",
+      "label": "Reinforcement Learning code",
+      "type": "evidence"
+    },
+    {
+      "id": "and_adverstrain",
+      "label": "[AND] TODO 2",
+      "type": "strategy"
+    },
+    {
+      "id": "threshold_for_model_ctf_performance",
+      "label": "Threshold for CTF model performance",
+      "type": "evidence"
+    },
+    {
+      "id": "and_adversfine_method_eval",
+      "label": "[AND] TODO 4",
+      "type": "strategy"
+    },
+    {
+      "id": "tacit_knowledge_troublesh_multichoice_dataset_experts_list",
+      "label": "List of the experts for Tacit Knowledge and Troubleshooting dataset creation",
+      "type": "evidence"
+    },
+    {
+      "id": "openai_sag_review",
+      "label": "OpenAI's Safety Advisory Group (\u201cSAG\u201d) review",
+      "type": "evidence"
+    },
+    {
+      "id": "verify_common_publi_lab_protocols_troublesh_cap_acceptable",
+      "label": "Verify Commonly published lab protocols troubleshooting capability is acceptable",
+      "type": "strategy"
+    },
+    {
+      "id": "verify_realworld_soft_issues_solving_cap_acceptable",
+      "label": "Verify Real-world software issues solving capability is acceptable",
+      "type": "strategy"
+    },
+    {
+      "id": "prepfram_tracked_categories",
+      "label": "Track Categories list",
+      "type": "evidence"
+    },
+    {
+      "id": "pr_replication_list",
+      "label": "Pull Request list",
+      "type": "evidence"
+    },
+    {
+      "id": "sota_ai_research_replication_cap_acceptable",
+      "label": "SOTA AI research replication capability is acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "biosec_relevant_tasks_cap_acceptable",
+      "label": "Specific biosecurity-relevant tasks capability is acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "adverstrain_valid",
+      "label": "Adversarial Training methodology is valid",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "external_experts_methodology_recommendations",
+      "label": "List of the experts recommendations after methodology review",
+      "type": "evidence"
+    },
+    {
+      "id": "adversfine_model_acceptable",
+      "label": "Adversarially Finetuned model is acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "phd_for_baseline_list",
+      "label": "PhD list used for baseline definition",
+      "type": "evidence"
+    },
+    {
+      "id": "implemented_experts_recommendations_list",
+      "label": "TODO: implemented experts recommendations list",
+      "type": "evidence"
+    },
+    {
+      "id": "verify_adversfine_cap_biochem_evaluated",
+      "label": "[AND] TODO 5",
+      "type": "strategy"
+    },
+    {
+      "id": "verify_adversfine_cap_selfimprov_acceptable",
+      "label": "[AND] TODO 7",
+      "type": "strategy"
+    },
+    {
+      "id": "tacit_knowledge_troublesh_multichoice_dataset",
+      "label": "Tacit Knowledge and Troubleshooting dataset",
+      "type": "evidence"
+    },
+    {
+      "id": "indicative_threshold_for_model_performance",
+      "label": "Indicative threshold for model performance",
+      "type": "evidence"
+    },
+    {
+      "id": "cyber_range_cap_acceptable_eval_results_no_hints",
+      "label": "Cyber range evaluation results (no hints)",
+      "type": "evidence"
+    },
+    {
+      "id": "verify_cap_maximized",
+      "label": "Verifying Capabilities relevant to Preparedness benchmark has been maximized",
+      "type": "strategy"
+    },
+    {
+      "id": "adversfine_cap_biochem_acceptable",
+      "label": "Adversarially Fine-tuned model's capability in Biological and Chemical is acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "ctf_eval_results",
+      "label": "Capture the Flag (CTF) Challenges evaluation results",
+      "type": "evidence"
+    },
+    {
+      "id": "prepfram_available",
+      "label": "Preparedness Framework is available",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "tacit_knowledge_troublesh_cap_acceptable",
+      "label": "Tacit Knowledge and Troubleshooting capability is acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "protocols_list",
+      "label": "Protocols list",
+      "type": "evidence"
+    },
+    {
+      "id": "modified_questions_from_protocolqa",
+      "label": "Modified FutureHouse's ProtocolQA questions list",
+      "type": "evidence"
+    },
+    {
+      "id": "internal_external_testing_results",
+      "label": "Internal and External testing results",
+      "type": "evidence"
+    },
+    {
+      "id": "longform_bio_risk_questions_autograding_model",
+      "label": "Autograding model",
+      "type": "evidence"
+    },
+    {
+      "id": "verify_prepfram_available",
+      "label": "Verifying Preparedness Framework availability",
+      "type": "strategy"
+    },
+    {
+      "id": "troubleshootingbench_independent_experts_review",
+      "label": "TroubleshootingBench independent experts review",
+      "type": "evidence"
+    },
+    {
+      "id": "verify_cyber_range_cap_acceptable",
+      "label": "Verify Cyber range capability is acceptable",
+      "type": "strategy"
+    },
+    {
+      "id": "sota_ai_research_replication_eval_results",
+      "label": "SOTA AI research replication evaluation results",
+      "type": "evidence"
+    },
+    {
+      "id": "verify_multimodal_troublesh_viro_cap_acceptable",
+      "label": "Verify Multimodal Troubleshooting Virology capability is acceptable",
+      "type": "strategy"
+    },
+    {
+      "id": "common_publi_lab_protocols_troublesh_cap_acceptable",
+      "label": "Commonly published lab protocols troubleshooting capability is acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "verify_adversmodel_available",
+      "label": "Verifying Adversarially fine-tuned model is available",
+      "type": "strategy"
+    },
+    {
+      "id": "c",
+      "label": "Preparedness Framework has been applied",
+      "type": "conclusion"
+    },
+    {
+      "id": "headlesslinux_distro",
+      "label": "HeadlessLinux distribution used for CTF",
+      "type": "evidence"
+    },
+    {
+      "id": "curated_ctf_challenges_list",
+      "label": "Curated CTF challenges list",
+      "type": "evidence"
+    },
+    {
+      "id": "and_prepfram",
+      "label": "[AND] TODO 1",
+      "type": "strategy"
+    },
+    {
+      "id": "adverstrain_impl",
+      "label": "Adversarial Training methodology has been implemented",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "verify_finetuned_model_high_cap",
+      "label": "Verifying finetuned model High Capability in Biological, Chemical and Cyber",
+      "type": "strategy"
+    },
+    {
+      "id": "phd_for_protocols_list",
+      "label": "PhD list used for protocols definition",
+      "type": "evidence"
+    },
+    {
+      "id": "realworld_exp_error_bio_ident_corr_eval_results",
+      "label": "Real-world experimental errors in biological protocols identification and correction evaluation results",
+      "type": "evidence"
+    },
+    {
+      "id": "indomain_expert_data",
+      "label": "In-domain expert data",
+      "type": "evidence"
+    },
+    {
+      "id": "unsafe_prompts",
+      "label": "Unsafe prompts",
+      "type": "evidence"
+    },
+    {
+      "id": "adversmodel_is_available",
+      "label": "Adversarially fine-tuned model is available",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "ai_research_papers_list",
+      "label": "AI research papers list",
+      "type": "evidence"
+    },
+    {
+      "id": "adverscode",
+      "label": "Adversarial Finetuning code",
+      "type": "evidence"
+    },
+    {
+      "id": "verify_sota_ai_research_replication_cap_acceptable",
+      "label": "Verify SOTA AI research replication capability is acceptable",
+      "type": "strategy"
+    },
+    {
+      "id": "verify_adverstrain_method_eval",
+      "label": "Verifying Adversarial Training methodology has been evaluated",
+      "type": "strategy"
+    },
+    {
+      "id": "helpful_train_has_been_impl",
+      "label": "Helpful-only Training has been implemented",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "adversmodel",
+      "label": "Adversarially fine-tuned model",
+      "type": "evidence"
+    },
+    {
+      "id": "verify_adversfine_cap_cybersec_acceptable",
+      "label": "[AND] TODO 6",
+      "type": "strategy"
+    },
+    {
+      "id": "cyber_range_cap_acceptable",
+      "label": "Cyber range capability is acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "ctf_cap_acceptable",
+      "label": "Capture the Flag (CTF) Challenges capability is acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "pr_replication_cap_acceptable",
+      "label": "Pull Request contributions by OpenAI employees replication capability is acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "impl_range_scenario_list",
+      "label": "Implemented range scenarios list",
+      "type": "evidence"
+    },
+    {
+      "id": "biosec_relevant_tasks_experts_list",
+      "label": "List of the experts for specific biosecurity-relevant tasks evaluation and red teaming",
+      "type": "evidence"
+    },
+    {
+      "id": "verify_ctf_cap_acceptable",
+      "label": "Verify Capture the Flag (CTF) Challenges capability is acceptable",
+      "type": "strategy"
+    },
+    {
+      "id": "realworld_soft_issues_solving_eval_benchmark",
+      "label": "SWE-bench Verified (N=477) benchmark",
+      "type": "evidence"
+    },
+    {
+      "id": "multimodal_troublesh_viro_eval_results",
+      "label": "Multimodal Virology Troubleshooting evaluation results",
+      "type": "evidence"
+    },
+    {
+      "id": "external_experts_reviewer_list",
+      "label": "List of external experts responsible for the review",
+      "type": "evidence"
+    },
+    {
+      "id": "multimodal_troublesh_viro_questions_list",
+      "label": "Multimodal Virology Troubleshooting Questions list",
+      "type": "evidence"
+    },
+    {
+      "id": "external_experts_qa_sessions_minutes",
+      "label": "QA session with external experts (for informed feedbacks) minutes",
+      "type": "evidence"
+    },
+    {
+      "id": "bio_threat_creation_process_stages_list",
+      "label": "Biological threat creation process stages list",
+      "type": "evidence"
+    },
+    {
+      "id": "verify_biosec_relevant_tasks_cap_acceptable",
+      "label": "Verify Specific biosecurity-relevant tasks capability is acceptable",
+      "type": "strategy"
+    },
+    {
+      "id": "prepfram_document",
+      "label": "Preparedness Framework document",
+      "type": "evidence"
+    },
+    {
+      "id": "cap_has_been_maximized",
+      "label": "Capabilities relevant to Preparedness benchmark has been maximized",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "cyber_range_cap_acceptable_eval_results_with_hints",
+      "label": "Cyber range evaluation results (with hints)",
+      "type": "evidence"
+    },
+    {
+      "id": "longform_bio_risk_questions_autograding_code",
+      "label": "Autograding code",
+      "type": "evidence"
+    },
+    {
+      "id": "longform_bio_risk_questions_experts_feedbacks",
+      "label": "Feedbacks from the experts after autograding",
+      "type": "evidence"
+    },
+    {
+      "id": "adversfine_cap_selfimprov_acceptable",
+      "label": "Adversarially Fine-tuned model's capability in AI Self-Improvement is acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "phd_model_comparison_code",
+      "label": "PhD vs model comparison code",
+      "type": "evidence"
+    },
+    {
+      "id": "longform_bio_risk_questions_list",
+      "label": "Long-form Biological Risk Questions list",
+      "type": "evidence"
+    },
+    {
+      "id": "realworld_soft_issues_solving_cap_acceptable",
+      "label": "Real-world software issues solving capability is acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "verify_longform_bio_risk_questions_cap_acceptable",
+      "label": "Verify Long-form Biological Risk Questions capability is acceptable",
+      "type": "strategy"
+    },
+    {
+      "id": "biosec_relevant_tasks_eval_results",
+      "label": "Specific biosecurity-relevant tasks evaluation results",
+      "type": "evidence"
+    },
+    {
+      "id": "common_publi_lab_protocols_troublesh_eval_results",
+      "label": "Commonly published lab protocols troubleshooting evaluation results",
+      "type": "evidence"
+    },
+    {
+      "id": "adverstrain_method_eval",
+      "label": "Adversarial Training methodology has been evaluated",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "troubleshootingbench_dataset",
+      "label": "TroubleshootingBench dataset",
+      "type": "evidence"
+    },
+    {
+      "id": "longform_bio_risk_questions_experts_list",
+      "label": "List of the experts for long-form Biological Risk Questions definition",
+      "type": "evidence"
+    },
+    {
+      "id": "multimodal_troublesh_viro_questions_experts_list",
+      "label": "List of the experts for Multimodal Virology Troubleshooting Questions definition",
+      "type": "evidence"
+    },
+    {
+      "id": "realworld_soft_issues_solving_eval_results",
+      "label": "Real-world software issues solving evaluation results",
+      "type": "evidence"
+    },
+    {
+      "id": "verify_tacit_knowledge_troublesh_cap_acceptable",
+      "label": "Verify Tacit Knowledge and Troubleshooting capability is acceptable",
+      "type": "strategy"
+    },
+    {
+      "id": "finetuning_code",
+      "label": "Finetuning code",
+      "type": "evidence"
+    },
+    {
+      "id": "finetuned_model_no_high_cap",
+      "label": "Finetuned model does not reach High Capability in Biological, Chemical and Cyber",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "longform_bio_risk_eval_results",
+      "label": "Long-form Biological Risk evaluation results",
+      "type": "evidence"
+    },
+    {
+      "id": "tacit_knowledge_troublesh_multichoice_eval_results",
+      "label": "Tacit Knowledge and Troubleshooting evaluation results",
+      "type": "evidence"
+    },
+    {
+      "id": "rpr_replication_eval_results",
+      "label": "Pull Request contributions by OpenAI employees replication evaluation results",
+      "type": "evidence"
+    },
+    {
+      "id": "biosec_relevant_tasks_internal_comparisons_report",
+      "label": "Internal follow-up comparisons report",
+      "type": "evidence"
+    },
+    {
+      "id": "realworld_exp_error_bio_ident_corr_cap_acceptable",
+      "label": "Real-world experimental errors in biological protocols identification and correction capability is acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "verify_pr_replication_cap_acceptable",
+      "label": "Verify Pull Request contributions by OpenAI employees replication capability is acceptable",
+      "type": "strategy"
+    },
+    {
+      "id": "multimodal_troublesh_viro_cap_acceptable",
+      "label": "Multimodal Troubleshooting Virology capability is acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "verify_helpful_train_impl",
+      "label": "Verifying Helpful-only Training has been implemented",
+      "type": "strategy"
+    },
+    {
+      "id": "adversfine_cap_cybersec_acceptable",
+      "label": "Adversarially Fine-tuned model's capability in Cybersecurity is acceptable",
+      "type": "sub-conclusion"
+    }
+  ],
+  "name": "prepared_framework",
+  "relations": [
+    {
+      "source": "adversmodel_is_available",
+      "target": "and_andverstrain_impl"
+    },
+    {
+      "source": "cap_has_been_maximized",
+      "target": "and_andverstrain_impl"
+    },
+    {
+      "source": "helpful_train_has_been_impl",
+      "target": "and_andverstrain_impl"
+    },
+    {
+      "source": "troubleshootingbench_dataset",
+      "target": "verify_realworld_exp_error_bio_ident_corr_cap_acceptable"
+    },
+    {
+      "source": "troubleshootingbench_independent_experts_review",
+      "target": "verify_realworld_exp_error_bio_ident_corr_cap_acceptable"
+    },
+    {
+      "source": "protocols_list",
+      "target": "verify_realworld_exp_error_bio_ident_corr_cap_acceptable"
+    },
+    {
+      "source": "indicative_threshold_for_model_performance",
+      "target": "verify_realworld_exp_error_bio_ident_corr_cap_acceptable"
+    },
+    {
+      "source": "phd_for_protocols_list",
+      "target": "verify_realworld_exp_error_bio_ident_corr_cap_acceptable"
+    },
+    {
+      "source": "verify_longform_bio_risk_questions_cap_acceptable",
+      "target": "longform_bio_risk_questions_cap_acceptable"
+    },
+    {
+      "source": "adverstrain_method_eval",
+      "target": "and_adverstrain"
+    },
+    {
+      "source": "adverstrain_impl",
+      "target": "and_adverstrain"
+    },
+    {
+      "source": "finetuned_model_no_high_cap",
+      "target": "and_adversfine_method_eval"
+    },
+    {
+      "source": "common_publi_lab_protocols_troublesh_eval_results",
+      "target": "verify_common_publi_lab_protocols_troublesh_cap_acceptable"
+    },
+    {
+      "source": "phd_for_baseline_list",
+      "target": "verify_common_publi_lab_protocols_troublesh_cap_acceptable"
+    },
+    {
+      "source": "modified_questions_from_protocolqa",
+      "target": "verify_common_publi_lab_protocols_troublesh_cap_acceptable"
+    },
+    {
+      "source": "phd_model_comparison_code",
+      "target": "verify_common_publi_lab_protocols_troublesh_cap_acceptable"
+    },
+    {
+      "source": "realworld_soft_issues_solving_eval_benchmark",
+      "target": "verify_realworld_soft_issues_solving_cap_acceptable"
+    },
+    {
+      "source": "realworld_soft_issues_solving_eval_results",
+      "target": "verify_realworld_soft_issues_solving_cap_acceptable"
+    },
+    {
+      "source": "verify_sota_ai_research_replication_cap_acceptable",
+      "target": "sota_ai_research_replication_cap_acceptable"
+    },
+    {
+      "source": "verify_biosec_relevant_tasks_cap_acceptable",
+      "target": "biosec_relevant_tasks_cap_acceptable"
+    },
+    {
+      "source": "and_adverstrain",
+      "target": "adverstrain_valid"
+    },
+    {
+      "source": "and_adversfine_method_eval",
+      "target": "adversfine_model_acceptable"
+    },
+    {
+      "source": "tacit_knowledge_troublesh_cap_acceptable",
+      "target": "verify_adversfine_cap_biochem_evaluated"
+    },
+    {
+      "source": "realworld_exp_error_bio_ident_corr_cap_acceptable",
+      "target": "verify_adversfine_cap_biochem_evaluated"
+    },
+    {
+      "source": "longform_bio_risk_questions_cap_acceptable",
+      "target": "verify_adversfine_cap_biochem_evaluated"
+    },
+    {
+      "source": "multimodal_troublesh_viro_cap_acceptable",
+      "target": "verify_adversfine_cap_biochem_evaluated"
+    },
+    {
+      "source": "common_publi_lab_protocols_troublesh_cap_acceptable",
+      "target": "verify_adversfine_cap_biochem_evaluated"
+    },
+    {
+      "source": "biosec_relevant_tasks_cap_acceptable",
+      "target": "verify_adversfine_cap_biochem_evaluated"
+    },
+    {
+      "source": "sota_ai_research_replication_cap_acceptable",
+      "target": "verify_adversfine_cap_selfimprov_acceptable"
+    },
+    {
+      "source": "realworld_soft_issues_solving_cap_acceptable",
+      "target": "verify_adversfine_cap_selfimprov_acceptable"
+    },
+    {
+      "source": "pr_replication_cap_acceptable",
+      "target": "verify_adversfine_cap_selfimprov_acceptable"
+    },
+    {
+      "source": "indomain_expert_data",
+      "target": "verify_cap_maximized"
+    },
+    {
+      "source": "finetuning_code",
+      "target": "verify_cap_maximized"
+    },
+    {
+      "source": "verify_adversfine_cap_biochem_evaluated",
+      "target": "adversfine_cap_biochem_acceptable"
+    },
+    {
+      "source": "verify_prepfram_available",
+      "target": "prepfram_available"
+    },
+    {
+      "source": "verify_tacit_knowledge_troublesh_cap_acceptable",
+      "target": "tacit_knowledge_troublesh_cap_acceptable"
+    },
+    {
+      "source": "prepfram_document",
+      "target": "verify_prepfram_available"
+    },
+    {
+      "source": "prepfram_tracked_categories",
+      "target": "verify_prepfram_available"
+    },
+    {
+      "source": "impl_range_scenario_list",
+      "target": "verify_cyber_range_cap_acceptable"
+    },
+    {
+      "source": "headlesslinux_distro",
+      "target": "verify_cyber_range_cap_acceptable"
+    },
+    {
+      "source": "cyber_range_cap_acceptable_eval_results_no_hints",
+      "target": "verify_cyber_range_cap_acceptable"
+    },
+    {
+      "source": "cyber_range_cap_acceptable_eval_results_with_hints",
+      "target": "verify_cyber_range_cap_acceptable"
+    },
+    {
+      "source": "multimodal_troublesh_viro_questions_list",
+      "target": "verify_multimodal_troublesh_viro_cap_acceptable"
+    },
+    {
+      "source": "multimodal_troublesh_viro_questions_experts_list",
+      "target": "verify_multimodal_troublesh_viro_cap_acceptable"
+    },
+    {
+      "source": "multimodal_troublesh_viro_eval_results",
+      "target": "verify_multimodal_troublesh_viro_cap_acceptable"
+    },
+    {
+      "source": "verify_common_publi_lab_protocols_troublesh_cap_acceptable",
+      "target": "common_publi_lab_protocols_troublesh_cap_acceptable"
+    },
+    {
+      "source": "adversmodel",
+      "target": "verify_adversmodel_available"
+    },
+    {
+      "source": "adverscode",
+      "target": "verify_adversmodel_available"
+    },
+    {
+      "source": "and_prepfram",
+      "target": "c"
+    },
+    {
+      "source": "prepfram_available",
+      "target": "and_prepfram"
+    },
+    {
+      "source": "adverstrain_valid",
+      "target": "and_prepfram"
+    },
+    {
+      "source": "adversfine_model_acceptable",
+      "target": "and_prepfram"
+    },
+    {
+      "source": "and_andverstrain_impl",
+      "target": "adverstrain_impl"
+    },
+    {
+      "source": "openai_sag_review",
+      "target": "verify_finetuned_model_high_cap"
+    },
+    {
+      "source": "adversfine_cap_selfimprov_acceptable",
+      "target": "verify_finetuned_model_high_cap"
+    },
+    {
+      "source": "internal_external_testing_results",
+      "target": "verify_finetuned_model_high_cap"
+    },
+    {
+      "source": "adversfine_cap_biochem_acceptable",
+      "target": "verify_finetuned_model_high_cap"
+    },
+    {
+      "source": "adversfine_cap_cybersec_acceptable",
+      "target": "verify_finetuned_model_high_cap"
+    },
+    {
+      "source": "verify_adversmodel_available",
+      "target": "adversmodel_is_available"
+    },
+    {
+      "source": "ai_research_papers_list",
+      "target": "verify_sota_ai_research_replication_cap_acceptable"
+    },
+    {
+      "source": "sota_ai_research_replication_eval_results",
+      "target": "verify_sota_ai_research_replication_cap_acceptable"
+    },
+    {
+      "source": "external_experts_reviewer_list",
+      "target": "verify_adverstrain_method_eval"
+    },
+    {
+      "source": "external_experts_methodology_recommendations",
+      "target": "verify_adverstrain_method_eval"
+    },
+    {
+      "source": "external_experts_qa_sessions_minutes",
+      "target": "verify_adverstrain_method_eval"
+    },
+    {
+      "source": "implemented_experts_recommendations_list",
+      "target": "verify_adverstrain_method_eval"
+    },
+    {
+      "source": "verify_helpful_train_impl",
+      "target": "helpful_train_has_been_impl"
+    },
+    {
+      "source": "cyber_range_cap_acceptable",
+      "target": "verify_adversfine_cap_cybersec_acceptable"
+    },
+    {
+      "source": "ctf_cap_acceptable",
+      "target": "verify_adversfine_cap_cybersec_acceptable"
+    },
+    {
+      "source": "verify_cyber_range_cap_acceptable",
+      "target": "cyber_range_cap_acceptable"
+    },
+    {
+      "source": "verify_ctf_cap_acceptable",
+      "target": "ctf_cap_acceptable"
+    },
+    {
+      "source": "verify_pr_replication_cap_acceptable",
+      "target": "pr_replication_cap_acceptable"
+    },
+    {
+      "source": "headlesslinux_distro",
+      "target": "verify_ctf_cap_acceptable"
+    },
+    {
+      "source": "curated_ctf_challenges_list",
+      "target": "verify_ctf_cap_acceptable"
+    },
+    {
+      "source": "ctf_eval_results",
+      "target": "verify_ctf_cap_acceptable"
+    },
+    {
+      "source": "threshold_for_model_ctf_performance",
+      "target": "verify_ctf_cap_acceptable"
+    },
+    {
+      "source": "biosec_relevant_tasks_experts_list",
+      "target": "verify_biosec_relevant_tasks_cap_acceptable"
+    },
+    {
+      "source": "biosec_relevant_tasks_internal_comparisons_report",
+      "target": "verify_biosec_relevant_tasks_cap_acceptable"
+    },
+    {
+      "source": "biosec_relevant_tasks_eval_results",
+      "target": "verify_biosec_relevant_tasks_cap_acceptable"
+    },
+    {
+      "source": "verify_cap_maximized",
+      "target": "cap_has_been_maximized"
+    },
+    {
+      "source": "verify_adversfine_cap_selfimprov_acceptable",
+      "target": "adversfine_cap_selfimprov_acceptable"
+    },
+    {
+      "source": "verify_realworld_soft_issues_solving_cap_acceptable",
+      "target": "realworld_soft_issues_solving_cap_acceptable"
+    },
+    {
+      "source": "longform_bio_risk_questions_list",
+      "target": "verify_longform_bio_risk_questions_cap_acceptable"
+    },
+    {
+      "source": "longform_bio_risk_questions_experts_feedbacks",
+      "target": "verify_longform_bio_risk_questions_cap_acceptable"
+    },
+    {
+      "source": "bio_threat_creation_process_stages_list",
+      "target": "verify_longform_bio_risk_questions_cap_acceptable"
+    },
+    {
+      "source": "longform_bio_risk_questions_experts_list",
+      "target": "verify_longform_bio_risk_questions_cap_acceptable"
+    },
+    {
+      "source": "longform_bio_risk_eval_results",
+      "target": "verify_longform_bio_risk_questions_cap_acceptable"
+    },
+    {
+      "source": "longform_bio_risk_questions_autograding_model",
+      "target": "verify_longform_bio_risk_questions_cap_acceptable"
+    },
+    {
+      "source": "longform_bio_risk_questions_autograding_code",
+      "target": "verify_longform_bio_risk_questions_cap_acceptable"
+    },
+    {
+      "source": "verify_adverstrain_method_eval",
+      "target": "adverstrain_method_eval"
+    },
+    {
+      "source": "tacit_knowledge_troublesh_multichoice_dataset_experts_list",
+      "target": "verify_tacit_knowledge_troublesh_cap_acceptable"
+    },
+    {
+      "source": "tacit_knowledge_troublesh_multichoice_dataset",
+      "target": "verify_tacit_knowledge_troublesh_cap_acceptable"
+    },
+    {
+      "source": "bio_threat_creation_process_stages_list",
+      "target": "verify_tacit_knowledge_troublesh_cap_acceptable"
+    },
+    {
+      "source": "tacit_knowledge_troublesh_multichoice_eval_results",
+      "target": "verify_tacit_knowledge_troublesh_cap_acceptable"
+    },
+    {
+      "source": "realworld_exp_error_bio_ident_corr_eval_results",
+      "target": "verify_tacit_knowledge_troublesh_cap_acceptable"
+    },
+    {
+      "source": "verify_finetuned_model_high_cap",
+      "target": "finetuned_model_no_high_cap"
+    },
+    {
+      "source": "verify_realworld_exp_error_bio_ident_corr_cap_acceptable",
+      "target": "realworld_exp_error_bio_ident_corr_cap_acceptable"
+    },
+    {
+      "source": "rpr_replication_eval_results",
+      "target": "verify_pr_replication_cap_acceptable"
+    },
+    {
+      "source": "pr_replication_list",
+      "target": "verify_pr_replication_cap_acceptable"
+    },
+    {
+      "source": "verify_multimodal_troublesh_viro_cap_acceptable",
+      "target": "multimodal_troublesh_viro_cap_acceptable"
+    },
+    {
+      "source": "unsafe_prompts",
+      "target": "verify_helpful_train_impl"
+    },
+    {
+      "source": "reinflearn_code",
+      "target": "verify_helpful_train_impl"
+    },
+    {
+      "source": "verify_adversfine_cap_cybersec_acceptable",
+      "target": "adversfine_cap_cybersec_acceptable"
+    }
+  ],
+  "type": "justification"
+}

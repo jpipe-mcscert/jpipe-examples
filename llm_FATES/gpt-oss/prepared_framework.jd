@@ -1,0 +1,312 @@
+justification prepared_framework { // TODO: differentiate gpt-oss-20b and gpt-oss-120b
+
+    conclusion c is "Preparedness Framework has been applied"
+
+    strategy and_prepfram is "[AND] TODO 1"
+    and_prepfram supports c
+
+    // checking preparedness framework availability
+
+    sub-conclusion prepfram_available is "Preparedness Framework is available"
+    prepfram_available supports and_prepfram
+
+    strategy verify_prepfram_available is "Verifying Preparedness Framework availability"
+    verify_prepfram_available supports prepfram_available
+
+    evidence prepfram_document is "Preparedness Framework document"
+    prepfram_document supports verify_prepfram_available
+
+    evidence prepfram_tracked_categories is "Track Categories list" // TODO: to check (they decided to support two of the 3 tracked categories)
+    prepfram_tracked_categories supports verify_prepfram_available
+
+    // checking adversarial training methodology validity
+
+    sub-conclusion adverstrain_valid is "Adversarial Training methodology is valid"
+    adverstrain_valid supports and_prepfram
+
+    strategy and_adverstrain is "[AND] TODO 2"
+    and_adverstrain supports adverstrain_valid
+
+    sub-conclusion adverstrain_impl is "Adversarial Training methodology has been implemented"
+    adverstrain_impl supports and_adverstrain
+
+    strategy and_andverstrain_impl is "[AND] TODO 3"
+    and_andverstrain_impl supports adverstrain_impl
+
+    sub-conclusion helpful_train_has_been_impl is "Helpful-only Training has been implemented"
+    helpful_train_has_been_impl supports and_andverstrain_impl
+
+    strategy verify_helpful_train_impl is "Verifying Helpful-only Training has been implemented"
+    verify_helpful_train_impl supports helpful_train_has_been_impl
+
+    evidence unsafe_prompts is "Unsafe prompts"
+    unsafe_prompts supports verify_helpful_train_impl
+
+    evidence reinflearn_code is "Reinforcement Learning code"
+    reinflearn_code supports verify_helpful_train_impl
+
+    sub-conclusion cap_has_been_maximized is "Capabilities relevant to Preparedness benchmark has been maximized"
+    cap_has_been_maximized supports and_andverstrain_impl
+
+    strategy verify_cap_maximized is "Verifying Capabilities relevant to Preparedness benchmark has been maximized"
+    verify_cap_maximized supports cap_has_been_maximized
+
+    evidence finetuning_code is "Finetuning code"
+    finetuning_code supports verify_cap_maximized
+
+    evidence indomain_expert_data is "In-domain expert data"
+    indomain_expert_data supports verify_cap_maximized
+
+    sub-conclusion adversmodel_is_available is "Adversarially fine-tuned model is available"
+    adversmodel_is_available supports and_andverstrain_impl
+
+    strategy verify_adversmodel_available is "Verifying Adversarially fine-tuned model is available"
+    verify_adversmodel_available supports adversmodel_is_available
+
+    evidence adversmodel is "Adversarially fine-tuned model"
+    adversmodel supports verify_adversmodel_available
+
+    evidence adverscode is "Adversarial Finetuning code"
+    adverscode supports verify_adversmodel_available
+
+    sub-conclusion adverstrain_method_eval is "Adversarial Training methodology has been evaluated"
+    adverstrain_method_eval supports and_adverstrain
+
+    strategy verify_adverstrain_method_eval is "Verifying Adversarial Training methodology has been evaluated"
+    verify_adverstrain_method_eval supports adverstrain_method_eval
+
+    evidence external_experts_reviewer_list is "List of external experts responsible for the review"
+    external_experts_reviewer_list supports verify_adverstrain_method_eval
+
+    evidence external_experts_methodology_recommendations is "List of the experts recommendations after methodology review"
+    external_experts_methodology_recommendations supports verify_adverstrain_method_eval
+
+    evidence external_experts_qa_sessions_minutes is "QA session with external experts (for informed feedbacks) minutes"
+    external_experts_qa_sessions_minutes supports verify_adverstrain_method_eval
+
+    evidence implemented_experts_recommendations_list is "TODO: implemented experts recommendations list"
+    implemented_experts_recommendations_list supports verify_adverstrain_method_eval
+
+    // checking adversarially fine-tuned model is acceptable
+
+    sub-conclusion adversfine_model_acceptable is "Adversarially Finetuned model is acceptable"
+    adversfine_model_acceptable supports and_prepfram
+
+    strategy and_adversfine_method_eval is "[AND] TODO 4"
+    and_adversfine_method_eval supports adversfine_model_acceptable
+
+    sub-conclusion finetuned_model_no_high_cap is "Finetuned model does not reach High Capability in Biological, Chemical and Cyber"  // TODO: should we keep BCC in subconclusion name?
+    finetuned_model_no_high_cap supports and_adversfine_method_eval
+
+    strategy verify_finetuned_model_high_cap is "Verifying finetuned model High Capability in Biological, Chemical and Cyber"
+    verify_finetuned_model_high_cap supports finetuned_model_no_high_cap
+
+    evidence openai_sag_review is "OpenAI's Safety Advisory Group (“SAG”) review"
+    openai_sag_review supports verify_finetuned_model_high_cap
+
+    evidence internal_external_testing_results is "Internal and External testing results" // TODO: keep or remove once justification is complete
+    internal_external_testing_results supports verify_finetuned_model_high_cap
+
+    sub-conclusion adversfine_cap_biochem_acceptable is "Adversarially Fine-tuned model's capability in Biological and Chemical is acceptable"
+    adversfine_cap_biochem_acceptable supports verify_finetuned_model_high_cap
+
+    strategy verify_adversfine_cap_biochem_evaluated is "[AND] TODO 5"
+    verify_adversfine_cap_biochem_evaluated supports adversfine_cap_biochem_acceptable
+
+    sub-conclusion longform_bio_risk_questions_cap_acceptable is "Long-form Biological Risk Questions capability is acceptable"
+    longform_bio_risk_questions_cap_acceptable supports verify_adversfine_cap_biochem_evaluated
+
+    strategy verify_longform_bio_risk_questions_cap_acceptable is "Verify Long-form Biological Risk Questions capability is acceptable"
+    verify_longform_bio_risk_questions_cap_acceptable supports longform_bio_risk_questions_cap_acceptable
+
+    evidence bio_threat_creation_process_stages_list is "Biological threat creation process stages list"
+    bio_threat_creation_process_stages_list supports verify_longform_bio_risk_questions_cap_acceptable
+
+    evidence longform_bio_risk_questions_experts_list is "List of the experts for long-form Biological Risk Questions definition"
+    longform_bio_risk_questions_experts_list supports verify_longform_bio_risk_questions_cap_acceptable
+
+    evidence longform_bio_risk_questions_list is "Long-form Biological Risk Questions list"
+    longform_bio_risk_questions_list supports verify_longform_bio_risk_questions_cap_acceptable
+
+    evidence longform_bio_risk_questions_autograding_model is "Autograding model"
+    longform_bio_risk_questions_autograding_model supports verify_longform_bio_risk_questions_cap_acceptable
+
+    evidence longform_bio_risk_questions_autograding_code is "Autograding code"
+    longform_bio_risk_questions_autograding_code supports verify_longform_bio_risk_questions_cap_acceptable
+
+    evidence longform_bio_risk_questions_experts_feedbacks is "Feedbacks from the experts after autograding"
+    longform_bio_risk_questions_experts_feedbacks supports verify_longform_bio_risk_questions_cap_acceptable
+
+    evidence longform_bio_risk_eval_results is "Long-form Biological Risk evaluation results"
+    longform_bio_risk_eval_results supports verify_longform_bio_risk_questions_cap_acceptable
+
+    sub-conclusion multimodal_troublesh_viro_cap_acceptable is "Multimodal Troubleshooting Virology capability is acceptable"
+    multimodal_troublesh_viro_cap_acceptable supports verify_adversfine_cap_biochem_evaluated
+
+    strategy verify_multimodal_troublesh_viro_cap_acceptable is "Verify Multimodal Troubleshooting Virology capability is acceptable"
+    verify_multimodal_troublesh_viro_cap_acceptable supports multimodal_troublesh_viro_cap_acceptable
+
+    evidence multimodal_troublesh_viro_questions_experts_list is "List of the experts for Multimodal Virology Troubleshooting Questions definition"
+    multimodal_troublesh_viro_questions_experts_list supports verify_multimodal_troublesh_viro_cap_acceptable
+
+    evidence multimodal_troublesh_viro_questions_list is "Multimodal Virology Troubleshooting Questions list"
+    multimodal_troublesh_viro_questions_list supports verify_multimodal_troublesh_viro_cap_acceptable
+
+    evidence multimodal_troublesh_viro_eval_results is "Multimodal Virology Troubleshooting evaluation results"
+    multimodal_troublesh_viro_eval_results supports verify_multimodal_troublesh_viro_cap_acceptable
+
+    sub-conclusion common_publi_lab_protocols_troublesh_cap_acceptable is "Commonly published lab protocols troubleshooting capability is acceptable"
+    common_publi_lab_protocols_troublesh_cap_acceptable supports verify_adversfine_cap_biochem_evaluated
+
+    strategy verify_common_publi_lab_protocols_troublesh_cap_acceptable is "Verify Commonly published lab protocols troubleshooting capability is acceptable"
+    verify_common_publi_lab_protocols_troublesh_cap_acceptable supports common_publi_lab_protocols_troublesh_cap_acceptable
+
+    evidence modified_questions_from_protocolqa is "Modified FutureHouse's ProtocolQA questions list"
+    modified_questions_from_protocolqa supports verify_common_publi_lab_protocols_troublesh_cap_acceptable
+
+    evidence phd_for_baseline_list is "PhD list used for baseline definition"
+    phd_for_baseline_list supports verify_common_publi_lab_protocols_troublesh_cap_acceptable
+
+    evidence phd_model_comparison_code is "PhD vs model comparison code"
+    phd_model_comparison_code supports verify_common_publi_lab_protocols_troublesh_cap_acceptable
+
+    evidence common_publi_lab_protocols_troublesh_eval_results is "Commonly published lab protocols troubleshooting evaluation results"
+    common_publi_lab_protocols_troublesh_eval_results supports verify_common_publi_lab_protocols_troublesh_cap_acceptable
+
+    sub-conclusion tacit_knowledge_troublesh_cap_acceptable is "Tacit Knowledge and Troubleshooting capability is acceptable"
+    tacit_knowledge_troublesh_cap_acceptable supports verify_adversfine_cap_biochem_evaluated
+
+    strategy verify_tacit_knowledge_troublesh_cap_acceptable is "Verify Tacit Knowledge and Troubleshooting capability is acceptable"
+    verify_tacit_knowledge_troublesh_cap_acceptable supports tacit_knowledge_troublesh_cap_acceptable
+
+    evidence tacit_knowledge_troublesh_multichoice_dataset_experts_list is "List of the experts for Tacit Knowledge and Troubleshooting dataset creation"
+    tacit_knowledge_troublesh_multichoice_dataset_experts_list supports verify_tacit_knowledge_troublesh_cap_acceptable
+
+    evidence tacit_knowledge_troublesh_multichoice_dataset is "Tacit Knowledge and Troubleshooting dataset"
+    tacit_knowledge_troublesh_multichoice_dataset supports verify_tacit_knowledge_troublesh_cap_acceptable
+    bio_threat_creation_process_stages_list supports verify_tacit_knowledge_troublesh_cap_acceptable
+
+    evidence tacit_knowledge_troublesh_multichoice_eval_results is "Tacit Knowledge and Troubleshooting evaluation results"
+    tacit_knowledge_troublesh_multichoice_eval_results supports verify_tacit_knowledge_troublesh_cap_acceptable
+
+    sub-conclusion realworld_exp_error_bio_ident_corr_cap_acceptable is "Real-world experimental errors in biological protocols identification and correction capability is acceptable"
+    realworld_exp_error_bio_ident_corr_cap_acceptable supports verify_adversfine_cap_biochem_evaluated
+
+    strategy verify_realworld_exp_error_bio_ident_corr_cap_acceptable is "Verify Real-world experimental errors in biological protocols identification and correction capability is acceptable"
+    verify_realworld_exp_error_bio_ident_corr_cap_acceptable supports realworld_exp_error_bio_ident_corr_cap_acceptable
+
+    evidence phd_for_protocols_list is "PhD list used for protocols definition"
+    phd_for_protocols_list supports verify_realworld_exp_error_bio_ident_corr_cap_acceptable
+
+    evidence protocols_list is "Protocols list"
+    protocols_list supports verify_realworld_exp_error_bio_ident_corr_cap_acceptable
+
+    evidence troubleshootingbench_dataset is "TroubleshootingBench dataset"
+    troubleshootingbench_dataset supports verify_realworld_exp_error_bio_ident_corr_cap_acceptable
+
+    evidence troubleshootingbench_independent_experts_review is "TroubleshootingBench independent experts review"
+    troubleshootingbench_independent_experts_review supports verify_realworld_exp_error_bio_ident_corr_cap_acceptable
+
+    evidence indicative_threshold_for_model_performance is "Indicative threshold for model performance"
+    indicative_threshold_for_model_performance supports verify_realworld_exp_error_bio_ident_corr_cap_acceptable
+
+    evidence realworld_exp_error_bio_ident_corr_eval_results is "Real-world experimental errors in biological protocols identification and correction evaluation results"
+    realworld_exp_error_bio_ident_corr_eval_results supports verify_tacit_knowledge_troublesh_cap_acceptable
+
+    sub-conclusion biosec_relevant_tasks_cap_acceptable is "Specific biosecurity-relevant tasks capability is acceptable"
+    biosec_relevant_tasks_cap_acceptable supports verify_adversfine_cap_biochem_evaluated
+
+    strategy verify_biosec_relevant_tasks_cap_acceptable is "Verify Specific biosecurity-relevant tasks capability is acceptable"
+    verify_biosec_relevant_tasks_cap_acceptable supports biosec_relevant_tasks_cap_acceptable
+
+    evidence biosec_relevant_tasks_experts_list is "List of the experts for specific biosecurity-relevant tasks evaluation and red teaming"
+    biosec_relevant_tasks_experts_list supports verify_biosec_relevant_tasks_cap_acceptable
+
+    evidence biosec_relevant_tasks_internal_comparisons_report is "Internal follow-up comparisons report"
+    biosec_relevant_tasks_internal_comparisons_report supports verify_biosec_relevant_tasks_cap_acceptable
+
+    evidence biosec_relevant_tasks_eval_results is "Specific biosecurity-relevant tasks evaluation results"
+    biosec_relevant_tasks_eval_results supports verify_biosec_relevant_tasks_cap_acceptable
+
+    sub-conclusion adversfine_cap_cybersec_acceptable is "Adversarially Fine-tuned model's capability in Cybersecurity is acceptable"
+    adversfine_cap_cybersec_acceptable supports verify_finetuned_model_high_cap
+
+    strategy verify_adversfine_cap_cybersec_acceptable is "[AND] TODO 6"
+    verify_adversfine_cap_cybersec_acceptable supports adversfine_cap_cybersec_acceptable
+
+    sub-conclusion ctf_cap_acceptable is "Capture the Flag (CTF) Challenges capability is acceptable"
+    ctf_cap_acceptable supports verify_adversfine_cap_cybersec_acceptable
+
+    strategy verify_ctf_cap_acceptable is "Verify Capture the Flag (CTF) Challenges capability is acceptable"
+    verify_ctf_cap_acceptable supports ctf_cap_acceptable
+
+    evidence curated_ctf_challenges_list is "Curated CTF challenges list"
+    curated_ctf_challenges_list supports verify_ctf_cap_acceptable
+
+    evidence headlesslinux_distro is "HeadlessLinux distribution used for CTF"
+    headlesslinux_distro supports verify_ctf_cap_acceptable
+
+    evidence threshold_for_model_ctf_performance is "Threshold for CTF model performance"
+    threshold_for_model_ctf_performance supports verify_ctf_cap_acceptable
+
+    evidence ctf_eval_results is "Capture the Flag (CTF) Challenges evaluation results"
+    ctf_eval_results supports verify_ctf_cap_acceptable
+
+    sub-conclusion cyber_range_cap_acceptable is "Cyber range capability is acceptable"
+    cyber_range_cap_acceptable supports verify_adversfine_cap_cybersec_acceptable
+
+    strategy verify_cyber_range_cap_acceptable is "Verify Cyber range capability is acceptable"
+    verify_cyber_range_cap_acceptable supports cyber_range_cap_acceptable
+
+    evidence impl_range_scenario_list is "Implemented range scenarios list"
+    impl_range_scenario_list supports verify_cyber_range_cap_acceptable
+    headlesslinux_distro supports verify_cyber_range_cap_acceptable
+
+    evidence cyber_range_cap_acceptable_eval_results_no_hints is "Cyber range evaluation results (no hints)"
+    cyber_range_cap_acceptable_eval_results_no_hints supports verify_cyber_range_cap_acceptable
+
+    evidence cyber_range_cap_acceptable_eval_results_with_hints is "Cyber range evaluation results (with hints)"
+    cyber_range_cap_acceptable_eval_results_with_hints supports verify_cyber_range_cap_acceptable
+
+    sub-conclusion adversfine_cap_selfimprov_acceptable is "Adversarially Fine-tuned model's capability in AI Self-Improvement is acceptable"
+    adversfine_cap_selfimprov_acceptable supports verify_finetuned_model_high_cap
+
+    strategy verify_adversfine_cap_selfimprov_acceptable is "[AND] TODO 7"
+    verify_adversfine_cap_selfimprov_acceptable supports adversfine_cap_selfimprov_acceptable
+
+    sub-conclusion realworld_soft_issues_solving_cap_acceptable is "Real-world software issues solving capability is acceptable"
+    realworld_soft_issues_solving_cap_acceptable supports verify_adversfine_cap_selfimprov_acceptable
+
+    strategy verify_realworld_soft_issues_solving_cap_acceptable is "Verify Real-world software issues solving capability is acceptable"
+    verify_realworld_soft_issues_solving_cap_acceptable supports realworld_soft_issues_solving_cap_acceptable
+    
+    evidence realworld_soft_issues_solving_eval_benchmark is "SWE-bench Verified (N=477) benchmark"
+    realworld_soft_issues_solving_eval_benchmark supports verify_realworld_soft_issues_solving_cap_acceptable
+
+    evidence realworld_soft_issues_solving_eval_results is "Real-world software issues solving evaluation results"
+    realworld_soft_issues_solving_eval_results supports verify_realworld_soft_issues_solving_cap_acceptable
+
+    sub-conclusion pr_replication_cap_acceptable is "Pull Request contributions by OpenAI employees replication capability is acceptable"
+    pr_replication_cap_acceptable supports verify_adversfine_cap_selfimprov_acceptable
+
+    strategy verify_pr_replication_cap_acceptable is "Verify Pull Request contributions by OpenAI employees replication capability is acceptable"
+    verify_pr_replication_cap_acceptable supports pr_replication_cap_acceptable
+
+    evidence pr_replication_list is "Pull Request list"
+    pr_replication_list supports verify_pr_replication_cap_acceptable
+
+    evidence rpr_replication_eval_results is "Pull Request contributions by OpenAI employees replication evaluation results"
+    rpr_replication_eval_results supports verify_pr_replication_cap_acceptable
+
+    sub-conclusion sota_ai_research_replication_cap_acceptable is "SOTA AI research replication capability is acceptable"
+    sota_ai_research_replication_cap_acceptable supports verify_adversfine_cap_selfimprov_acceptable
+
+    strategy verify_sota_ai_research_replication_cap_acceptable is "Verify SOTA AI research replication capability is acceptable"
+    verify_sota_ai_research_replication_cap_acceptable supports sota_ai_research_replication_cap_acceptable
+
+    evidence ai_research_papers_list is "AI research papers list"
+    ai_research_papers_list supports verify_sota_ai_research_replication_cap_acceptable
+
+    evidence sota_ai_research_replication_eval_results is "SOTA AI research replication evaluation results"
+    sota_ai_research_replication_eval_results supports verify_sota_ai_research_replication_cap_acceptable
+}
