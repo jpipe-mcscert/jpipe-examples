@@ -1,0 +1,26 @@
+justification final {
+    conclusion c is "Preparedness Framework has been applied"
+    strategy strat is "Implementing all methods of "
+    strat supports c
+    sub-conclusion bio_chem is "Adversarially Fine-tuned model's Biological and Chemical capability has been evaluated"
+    sub-conclusion cyber is "Adversarially Fine-tuned model's Cybersecurity capability has been evaluated"
+    sub-conclusion ai is "AI Self-Improvement model's capability has been evaluated"
+    bio_chem supports strat
+    cyber supports strat
+    ai supports strat
+    strategy strat1 is "All methods of Preparedness Framework have been applied" 
+    strat1 supports bio_chem
+    sub-conclusion bio_eval is "Model's long-form Biological Risk Questions capability has been evaluated"
+    sub-conclusion viro_eval is "Model's Multimodal Troubleshooting Virology capability has been evaluated"
+    sub-conclusion lab_eval is "Model's commonly published lab protocols troubleshooting capability has been evaluated"
+    sub-conclusion mtkte is "Model's Tacit Knowledge and Troubleshooting capability has been evaluated"
+    sub-conclusion mrwee is "Model's real-world experimental errors in biological protocols identification and correction capability has been evaluated"
+    sub-conclusion mchbe is "Model's capability has been externaly assessed on biosecurity-relevant tasks by experts"
+    bio_eval supports strat1
+    viro_eval supports strat1
+    lab_eval supports strat1
+    mtkte supports strat1
+    mrwee supports strat1
+    mchbe supports strat1
+
+}

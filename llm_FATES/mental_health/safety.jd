@@ -1,0 +1,14 @@
+justification safety {
+    conclusion model_safe is "Selected model is safe"
+    strategy all_safe is "All safe methods have been implemented"
+    all_safe supports model_safe
+    sub-conclusion outcome_proxy is "The outcome proxy selection process is acceptable"
+    outcome_proxy supports all_safe
+    strategy outcome_proxy_strat is "Evaluating proxy selection process"
+    outcome_proxy_strat supports outcome_proxy
+    sub-conclusion data_provenance is "The model can correctly evaluate the data provenance"
+    
+    sub-conclusion harm_reduction is "The model effectively reduces the harm done to patients and healthcare workers"
+    sub-conclusion automation_bias is "Automation bias is mitigated to acceptable levels"
+    sub-conclusion critical_help is "The model provided critical help when needed"
+}
