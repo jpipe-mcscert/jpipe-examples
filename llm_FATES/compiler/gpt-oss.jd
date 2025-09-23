@@ -1,8 +1,11 @@
- justification cyber_capability {
+ pattern cyber_capability {
     conclusion adversfine_cap_cybersec_acceptable is "Adversarially Finetuned models capability in Cybersecurity is acceptable"
 
     strategy verify_adversfine_cap_cybersec_acceptable is "Aggregate all the models evaluations in terms of cybersecurity capabilities "
     verify_adversfine_cap_cybersec_acceptable supports adversfine_cap_cybersec_acceptable
+
+    @support cyber_range is "Cyber Range capability is acceptable"
+    cyber_range supports verify_adversfine_cap_cybersec_acceptable
 
     sub-conclusion ctf_cap_acceptable is "CTF Challenges capability is acceptable"
     ctf_cap_acceptable supports verify_adversfine_cap_cybersec_acceptable
