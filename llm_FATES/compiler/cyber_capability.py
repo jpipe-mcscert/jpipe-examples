@@ -1,6 +1,12 @@
 ######
 ## Justification cyber_capability
 ######
+import httpx
+import yaml
+
+from typing import Any, Callable
+
+from jpipe_runner.framework.decorators.jpipe_decorator import jpipe
 
 ## Strategy verify_ctf_cap_acceptable
 @jpipe(consume=["test1", "test2", "test3", "test4"], produce=["test5"])
