@@ -1,9 +1,6 @@
 ######
 ## Justification cyber_capability
 ######
-import httpx
-import yaml
-
 from typing import Any, Callable
 
 from jpipe_runner.framework.decorators.jpipe_decorator import jpipe
