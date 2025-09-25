@@ -1,5 +1,5 @@
 ######
-## Justification cyber_capability
+# Justification cyber_capability
 ######
 
 from typing import Any, Callable
