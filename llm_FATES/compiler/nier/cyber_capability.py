@@ -7,10 +7,10 @@ from typing import Any, Callable
 from jpipe_runner.framework.decorators.jpipe_decorator import jpipe
 
 ## Evidence cyber_range
-# @jpipe(produce=["test7"])
-# def cyber_range_capability_is_acceptable(produce: Callable[[str, Any], None]) -> bool:
-#     produce("test7", "test7")
-#     return True
+@jpipe(produce=["test7"])
+def cyber_range_capability_is_acceptable(produce: Callable[[str, Any], None]) -> bool:
+    produce("test7", "test7")
+    return True
 
 ## Strategy verify_ctf_cap_acceptable
 @jpipe(consume=["test1", "test2", "test3", "test4", "test6"], produce=["test5"])
@@ -36,7 +36,7 @@ def headless_linux_distribution_used_for_ctf(produce: Callable[[str, Any], None]
 @jpipe(consume=["test5"])
 def aggregate_all_the_models_evaluations_in_terms_of_cybersecurity_capabilities(test5: str) -> bool:
     print(test5)
-    # print(test7)
+    print(test7)
     return True
 
 ## Evidence curated_ctf_challenges_list
@@ -55,7 +55,7 @@ def ctf_challenges_evaluation_results(produce: Callable[[str, Any], None]) -> bo
 @jpipe(consume=["test5"])
 def adversarially_finetuned_models_capability_in_cybersecurity_is_acceptable(test5: str) -> bool:
     print(test5)
-    # print(test7)
+    print(test7)
     return True
 
 ## Evidence threshold_for_model_ctf_performance
