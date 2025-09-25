@@ -1,0 +1,117 @@
+<svg width="1011px" height="357px"
+ viewBox="0.00 0.00 1011.00 357.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 352.5)">
+<polygon fill="white" stroke="none" points="-4,4 -4,-352.5 1006.86,-352.5 1006.86,4 -4,4"/>
+<text xml:space="preserve" text-anchor="start" x="419.3" y="-7.2" font-family="Times,serif" font-size="14.00">&lt;&lt;pattern&gt;&gt; cyber_capability</text>
+<!-- cyber_range -->
+<g id="cyber_capability:cyber_range" class="node">
+<title>cyber_range</title>
+<polygon fill="none" stroke="black" stroke-width="1.01" stroke-dasharray="1,5" points="414.98,-204.5 194.98,-204.5 194.98,-168.5 414.98,-168.5 414.98,-204.5"/>
+<text xml:space="preserve" text-anchor="start" x="202.98" y="-182.45" font-family="Times,serif" font-style="italic" font-size="14.00">Cyber Range capability is acceptable</text>
+</g>
+<!-- verify_adversfine_cap_cybersec_acceptable -->
+<g id="cyber_capability:verify_adversfine_cap_cybersec_acceptable" class="node">
+<title>verify_adversfine_cap_cybersec_acceptable</title>
+<polygon fill="palegreen" stroke="black" stroke-width="1.01" points="855.97,-276.5 175.14,-276.5 0,-240.5 680.82,-240.5 855.97,-276.5"/>
+<text xml:space="preserve" text-anchor="start" x="222.11" y="-253.45" font-family="Times,serif" font-size="14.00">Aggregate all the models evaluations in terms of cybersecurity capabilities </text>
+</g>
+<!-- cyber_range&#45;&gt;verify_adversfine_cap_cybersec_acceptable -->
+<g id="edge1" class="edge">
+<title>cyber_range&#45;&gt;verify_adversfine_cap_cybersec_acceptable</title>
+<path fill="none" stroke="black" d="M335.7,-204.98C351.41,-213.92 370.72,-224.91 387.61,-234.52"/>
+<polygon fill="black" stroke="black" points="385.49,-237.34 395.91,-239.25 388.95,-231.26 385.49,-237.34"/>
+</g>
+<!-- verify_ctf_cap_acceptable -->
+<g id="cyber_capability:verify_ctf_cap_acceptable" class="node">
+<title>verify_ctf_cap_acceptable</title>
+<polygon fill="palegreen" stroke="black" stroke-width="1.01" points="823.63,-132.5 389.91,-132.5 278.33,-96.5 712.06,-96.5 823.63,-132.5"/>
+<text xml:space="preserve" text-anchor="start" x="422.73" y="-109.45" font-family="Times,serif" font-size="14.00">Verify CTF Challenges capability is acceptable</text>
+</g>
+<!-- ctf_cap_acceptable -->
+<g id="cyber_capability:ctf_cap_acceptable" class="node">
+<title>ctf_cap_acceptable</title>
+<polygon fill="none" stroke="dodgerblue" stroke-width="1.01" points="668.48,-204.5 433.48,-204.5 433.48,-168.5 668.48,-168.5 668.48,-204.5"/>
+<text xml:space="preserve" text-anchor="start" x="441.48" y="-181.45" font-family="Times,serif" font-size="14.00">CTF Challenges capability is acceptable</text>
+</g>
+<!-- verify_ctf_cap_acceptable&#45;&gt;ctf_cap_acceptable -->
+<g id="edge2" class="edge">
+<title>verify_ctf_cap_acceptable&#45;&gt;ctf_cap_acceptable</title>
+<path fill="none" stroke="black" d="M550.98,-132.8C550.98,-140.09 550.98,-148.77 550.98,-156.96"/>
+<polygon fill="black" stroke="black" points="547.48,-156.88 550.98,-166.88 554.48,-156.88 547.48,-156.88"/>
+</g>
+<!-- headlesslinux_distro -->
+<g id="cyber_capability:headlesslinux_distro" class="node">
+<title>headlesslinux_distro</title>
+<polygon fill="#a4d3ee" stroke="black" stroke-width="1.01" points="340.73,-60.5 107.23,-60.5 107.23,-24.5 346.73,-24.5 346.73,-54.5 340.73,-60.5"/>
+<polyline fill="none" stroke="black" stroke-width="1.01" points="340.73,-60.5 340.73,-54.5"/>
+<polyline fill="none" stroke="black" stroke-width="1.01" points="346.73,-54.5 340.73,-54.5"/>
+<text xml:space="preserve" text-anchor="start" x="115.23" y="-37.45" font-family="Times,serif" font-size="14.00">HeadlessLinux distribution used for CTF</text>
+</g>
+<!-- headlesslinux_distro&#45;&gt;verify_ctf_cap_acceptable -->
+<g id="edge3" class="edge">
+<title>headlesslinux_distro&#45;&gt;verify_ctf_cap_acceptable</title>
+<path fill="none" stroke="black" d="M307.91,-60.98C353.72,-70.88 411.18,-83.3 458.73,-93.57"/>
+<polygon fill="black" stroke="black" points="457.98,-96.99 468.49,-95.68 459.45,-90.14 457.98,-96.99"/>
+</g>
+<!-- curated_ctf_challenges_list -->
+<g id="cyber_capability:curated_ctf_challenges_list" class="node">
+<title>curated_ctf_challenges_list</title>
+<polygon fill="#a4d3ee" stroke="black" stroke-width="1.01" points="527.11,-60.5 364.86,-60.5 364.86,-24.5 533.11,-24.5 533.11,-54.5 527.11,-60.5"/>
+<polyline fill="none" stroke="black" stroke-width="1.01" points="527.11,-60.5 527.11,-54.5"/>
+<polyline fill="none" stroke="black" stroke-width="1.01" points="533.11,-54.5 527.11,-54.5"/>
+<text xml:space="preserve" text-anchor="start" x="372.86" y="-37.45" font-family="Times,serif" font-size="14.00">Curated CTF challenges list</text>
+</g>
+<!-- curated_ctf_challenges_list&#45;&gt;verify_ctf_cap_acceptable -->
+<g id="edge4" class="edge">
+<title>curated_ctf_challenges_list&#45;&gt;verify_ctf_cap_acceptable</title>
+<path fill="none" stroke="black" d="M474.46,-60.98C487.12,-69.67 502.6,-80.3 516.32,-89.71"/>
+<polygon fill="black" stroke="black" points="514,-92.37 524.23,-95.14 517.97,-86.6 514,-92.37"/>
+</g>
+<!-- ctf_eval_results -->
+<g id="cyber_capability:ctf_eval_results" class="node">
+<title>ctf_eval_results</title>
+<polygon fill="#a4d3ee" stroke="black" stroke-width="1.01" points="748.73,-60.5 551.23,-60.5 551.23,-24.5 754.73,-24.5 754.73,-54.5 748.73,-60.5"/>
+<polyline fill="none" stroke="black" stroke-width="1.01" points="748.73,-60.5 748.73,-54.5"/>
+<polyline fill="none" stroke="black" stroke-width="1.01" points="754.73,-54.5 748.73,-54.5"/>
+<text xml:space="preserve" text-anchor="start" x="559.23" y="-37.45" font-family="Times,serif" font-size="14.00">CTF Challenges evaluation results</text>
+</g>
+<!-- ctf_eval_results&#45;&gt;verify_ctf_cap_acceptable -->
+<g id="edge5" class="edge">
+<title>ctf_eval_results&#45;&gt;verify_ctf_cap_acceptable</title>
+<path fill="none" stroke="black" d="M627.51,-60.98C614.85,-69.67 599.37,-80.3 585.65,-89.71"/>
+<polygon fill="black" stroke="black" points="584,-86.6 577.74,-95.14 587.96,-92.37 584,-86.6"/>
+</g>
+<!-- threshold_for_model_ctf_performance -->
+<g id="cyber_capability:threshold_for_model_ctf_performance" class="node">
+<title>threshold_for_model_ctf_performance</title>
+<polygon fill="#a4d3ee" stroke="black" stroke-width="1.01" points="996.86,-60.5 773.11,-60.5 773.11,-24.5 1002.86,-24.5 1002.86,-54.5 996.86,-60.5"/>
+<polyline fill="none" stroke="black" stroke-width="1.01" points="996.86,-60.5 996.86,-54.5"/>
+<polyline fill="none" stroke="black" stroke-width="1.01" points="1002.86,-54.5 996.86,-54.5"/>
+<text xml:space="preserve" text-anchor="start" x="781.11" y="-37.45" font-family="Times,serif" font-size="14.00">Threshold for CTF model performance</text>
+</g>
+<!-- threshold_for_model_ctf_performance&#45;&gt;verify_ctf_cap_acceptable -->
+<g id="edge6" class="edge">
+<title>threshold_for_model_ctf_performance&#45;&gt;verify_ctf_cap_acceptable</title>
+<path fill="none" stroke="black" d="M803.81,-60.98C755.96,-70.92 695.89,-83.4 646.31,-93.7"/>
+<polygon fill="black" stroke="black" points="645.81,-90.23 636.73,-95.69 647.23,-97.08 645.81,-90.23"/>
+</g>
+<!-- adversfine_cap_cybersec_acceptable -->
+<g id="cyber_capability:adversfine_cap_cybersec_acceptable" class="node">
+<title>adversfine_cap_cybersec_acceptable</title>
+<path fill="lightgrey" stroke="black" stroke-width="1.01" d="M623.48,-348.5C623.48,-348.5 232.48,-348.5 232.48,-348.5 226.48,-348.5 220.48,-342.5 220.48,-336.5 220.48,-336.5 220.48,-324.5 220.48,-324.5 220.48,-318.5 226.48,-312.5 232.48,-312.5 232.48,-312.5 623.48,-312.5 623.48,-312.5 629.48,-312.5 635.48,-318.5 635.48,-324.5 635.48,-324.5 635.48,-336.5 635.48,-336.5 635.48,-342.5 629.48,-348.5 623.48,-348.5"/>
+<text xml:space="preserve" text-anchor="start" x="228.48" y="-325.45" font-family="Times,serif" font-size="14.00">Adversarially Finetuned models capability in Cybersecurity is acceptable</text>
+</g>
+<!-- verify_adversfine_cap_cybersec_acceptable&#45;&gt;adversfine_cap_cybersec_acceptable -->
+<g id="edge7" class="edge">
+<title>verify_adversfine_cap_cybersec_acceptable&#45;&gt;adversfine_cap_cybersec_acceptable</title>
+<path fill="none" stroke="black" d="M427.98,-276.8C427.98,-284.09 427.98,-292.77 427.98,-300.96"/>
+<polygon fill="black" stroke="black" points="424.48,-300.88 427.98,-310.88 431.48,-300.88 424.48,-300.88"/>
+</g>
+<!-- ctf_cap_acceptable&#45;&gt;verify_adversfine_cap_cybersec_acceptable -->
+<g id="edge8" class="edge">
+<title>ctf_cap_acceptable&#45;&gt;verify_adversfine_cap_cybersec_acceptable</title>
+<path fill="none" stroke="black" d="M520.26,-204.98C504.56,-213.92 485.25,-224.91 468.36,-234.52"/>
+<polygon fill="black" stroke="black" points="467.01,-231.26 460.05,-239.25 470.48,-237.34 467.01,-231.26"/>
+</g>
+</g>
+</svg>
