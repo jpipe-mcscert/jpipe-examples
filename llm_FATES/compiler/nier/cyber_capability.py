@@ -22,7 +22,7 @@ def verify_ctf_challenges_capability_is_acceptable(
         test6: str,
         produce: Callable[[str, Any], None]
     ) -> bool:
-    print(test1, test2, test3, test4, test5)
+    print(test1, test2, test3, test4, test6)
     produce("test5", "test5")
     return True
 
