@@ -43,7 +43,7 @@ def aggregate_all_the_models_evaluations_in_terms_of_cybersecurity_capabilities(
 @jpipe(produce=["test2"])
 def curated_ctf_challenges_list(produce: Callable[[str, Any], None]) -> bool:
     produce("test2", "test2")
-    return False
+    return True
 
 ## Evidence ctf_eval_results
 @jpipe(consume=[], produce=["test3"])
