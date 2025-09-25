@@ -7,6 +7,9 @@
     sub-conclusion ctf_cap_acceptable is "CTF Challenges capability is acceptable"
     ctf_cap_acceptable supports verify_adversfine_cap_cybersec_acceptable
 
+    evidence cyber_range is "Cyber Range capability is acceptable"
+    cyber_range supports verify_adversfine_cap_cybersec_acceptable
+
     strategy verify_ctf_cap_acceptable is "Verify CTF Challenges capability is acceptable"
     verify_ctf_cap_acceptable supports ctf_cap_acceptable
 
