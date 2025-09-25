@@ -17,7 +17,7 @@
     },
     {
       "id": "verify_adversfine_cap_cybersec_acceptable",
-      "label": "Aggregate all the models evaluations in terms of cybersecurity capabilities ",
+      "label": "Aggregate all the models evaluations in terms of cybersecurity capabilities",
       "type": "strategy"
     },
     {
