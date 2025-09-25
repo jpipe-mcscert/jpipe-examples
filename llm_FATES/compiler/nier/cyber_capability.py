@@ -13,28 +13,28 @@ def cyber_range_capability_is_acceptable(produce: Callable[[str, Any], None]) ->
     return True
 
 ## Strategy verify_ctf_cap_acceptable
-@jpipe(consume=["test1", "test2", "test3", "test4", "test6"], produce=["test5"])
+@jpipe(consume=["test1", "test2", "test3", "test4", "test5"], produce=["test5"])
 def verify_ctf_challenges_capability_is_acceptable(
         test1: str,
         test2: str,
         test3: str,
         test4: str,
-        test6: str,
+        test5: str,
         produce: Callable[[str, Any], None]
     ) -> bool:
-    print(test1, test2, test3, test4, test6)
+    print(test1, test2, test3, test4, test5)
     produce("test5", "test5")
     return True
 
 ## Evidence headlesslinux_distro
-@jpipe(produce=["test6"])
+@jpipe(produce=["test5"])
 def headless_linux_distribution_used_for_ctf(produce: Callable[[str, Any], None]) -> bool:
-    produce("test6", "test6")
+    produce("test5", "test5")
     return True
 
 ## Strategy verify_adversfine_cap_cybersec_acceptable
-@jpipe(consume=["test5"])
-def aggregate_all_the_models_evaluations_in_terms_of_cybersecurity_capabilities(test5: str) -> bool:
+@jpipe(consume=["test5", "test7"])
+def aggregate_all_the_models_evaluations_in_terms_of_cybersecurity_capabilities(test5: str, test7: str) -> bool:
     print(test5)
     print(test7)
     return True
