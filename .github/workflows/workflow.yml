@@ -25,7 +25,7 @@ jobs:
         with:
           version: feat/v3.1.0
           embed_image: "true"
-          image_branch: "diagram-images"
+          image_branch: "test-runner-diagram-images"
           jd_file: llm_FATES/compiler/nier/cyber_capability.json
           config-file: llm_FATES/config.yaml
           library: llm_FATES/compiler/nier/cyber_capability.py
