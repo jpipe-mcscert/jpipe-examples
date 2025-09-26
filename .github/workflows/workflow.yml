@@ -21,18 +21,12 @@ jobs:
           python-version: "3.13"
 
       - name: Run jPipe Runner
-        uses: jpipe-mcscert/jpipe-runner@main
+        uses: jpipe-mcscert/jpipe-runner@feat/v3.1.0
         with:
-          version: main
-          # embed_image: "true"
-          # image_branch: "test-runner-diagram-images"
-          jd_file: llm_FATES/compiler/nier/cyber_capability.json
+          version: feat/v3.1.0
+          embed_image: "true"
+          image_branch: "diagram-images"
+          jd_file: llm_FATES/justification.jd.json
           config-file: llm_FATES/config.yaml
-          variable: |
-            test1:test1
-            test2:test2
-            test3:test3
-            test4:test4
-            test5:test5
-          library: llm_FATES/compiler/nier/cyber_capability.py
-          # github-token: ${{ secrets.GITHUB_TOKEN }}
+          library: llm_FATES/jpipe-libs/steps.py
+          github-token: ${{ secrets.GITHUB_TOKEN }}
