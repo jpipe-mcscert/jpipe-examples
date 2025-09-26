@@ -28,5 +28,12 @@ jobs:
           # image_branch: "test-runner-diagram-images"
           jd_file: llm_FATES/compiler/nier/cyber_capability.json
           config-file: llm_FATES/config.yaml
+          variable:
+            - test1:test1
+            - test2:test2
+            - test3:test3
+            - test4:test4
+            - test5:test5
+
           library: llm_FATES/compiler/nier/cyber_capability.py
           # github-token: ${{ secrets.GITHUB_TOKEN }}
