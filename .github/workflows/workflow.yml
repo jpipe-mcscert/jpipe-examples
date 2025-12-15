@@ -23,6 +23,21 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install system dependencies
+        if: steps.cache-apt.outputs.cache-hit != 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential \
+            graphviz \
+            libgraphviz-dev \
+            pkg-config \
+            python3-dev
+
+      - name: Install python dependencies
+        run: |
+          pip install -r llm_FATES/requirements.txt
+
       - name: Run jPipe Runner
         uses: jpipe-mcscert/jpipe-runner@feat/v3.1.0
         with:
@@ -31,5 +46,6 @@ jobs:
           image_branch: "diagram-images"
           jd_file: llm_FATES/justification.jd.json
           config-file: llm_FATES/config.yaml
-          library: steps.py
+          library: llm_FATES/jpipe-libs/steps.py
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          python_path: python

@@ -7,9 +7,10 @@ import yaml
 from typing import Any, Callable
 
 from jpipe_runner.framework.decorators.jpipe_decorator import jpipe
+from jpipe_runner.framework.decorators.contribution_decorator import contribution
 
 
-RESOURCES_DIR = "resources/"
+RESOURCES_DIR = "llm_FATES/resources"
 
 ################
 ## Conclusion ##
@@ -30,7 +31,8 @@ def fairness_exists() -> bool:
 ## Strategy training
 @jpipe(consume=["dataset_configuration", "training_code"], produce=[])
 def training_model_using_the_multilingual_dataset(
-    produce: Callable[[str, Any], None],
+    dataset_configuration,
+    training_code
 ) -> bool:
     return True
 
@@ -38,33 +40,35 @@ def training_model_using_the_multilingual_dataset(
 ## Strategy testing_multi_ling
 @jpipe(consume=["eval_configuration", "evaluation_procedure"], produce=[])
 def evaluating_model_using_the_multilingual_benchmark(
-    produce: Callable[[str, Any], None],
+    eval_configuration,
+    evaluation_procedure
 ) -> bool:
     return True
 
 
 ## Strategy fairness_impl_methods
 @jpipe(consume=[], produce=[])
-def implementing_fairness_within_model(produce: Callable[[str, Any], None]) -> bool:
+def implementing_fairness_within_model() -> bool:
     return True
 
 
 ## Strategy AND
 @jpipe(consume=[], produce=[])
-def and_(produce) -> bool:
+def and_() -> bool:
     return True
 
 
 ## Strategy fairness_exe_methods
 @jpipe(consume=[], produce=[])
-def executing_fairness_benchmarks(produce: Callable[[str, Any], None]) -> bool:
+def executing_fairness_benchmarks() -> bool:
     return True
 
 
 ## Strategy testing_BBQ
 @jpipe(consume=["evaluation_procedure", "bbq_benchmark"], produce=[])
 def evaluating_model_using_the_bbq_benchmark(
-    produce: Callable[[str, Any], None],
+    evaluation_procedure,
+    bbq_benchmark
 ) -> bool:
     return True
 
@@ -75,8 +79,8 @@ def evaluating_model_using_the_bbq_benchmark(
 
 
 ## Evidence multi_ling_BM
-@jpipe(consume=[], produce=["eval_configuration"])
-def multilingual_benchmark_is_present(produce: Callable[[str, Any], None]) -> bool:
+@jpipe(produce=["eval_configuration"])
+def multilingual_benchmark_is_present(produce) -> bool:
     EXPECTED_PRETRAINING_BENCHMARKS_ = [
         # MLMM Hellaswag
         "mlmm_hellaswag_ara_cf",
@@ -126,25 +130,24 @@ def multilingual_benchmark_is_present(produce: Callable[[str, Any], None]) -> bo
     ]
 
     with open(f"{RESOURCES_DIR}/eval/smollm3_base.txt") as f:
-        try:
-            eval_configuration = f.read()
-            # comparing the listed benchmarks with the expected supported languages
-            remaining = [
-                e
-                for e in EXPECTED_PRETRAINING_BENCHMARKS_
-                if f"lighteval|{e}" not in eval_configuration
-            ]
-            assert not remaining, f"missing language benchmark(s) {remaining} in eval"
+        eval_configuration = f.read()
+        # comparing the listed benchmarks with the expected supported languages
+        remaining = [
+            e
+            for e in EXPECTED_PRETRAINING_BENCHMARKS_
+            if f"lighteval|{e}" not in eval_configuration
+        ]
+        assert not remaining, f"missing language benchmark(s) {remaining} in eval"
 
-            produce("eval_configuration", eval_configuration)
-        except yaml.YAMLError as exc:
-            print(exc)
-    return True
+    if eval_configuration:
+        produce("eval_configuration", eval_configuration)
+        return True
+    return False
 
 
 ## Evidence training_code
-@jpipe(consume=[], produce=["training_code"])
-def training_code_is_present(produce: Callable[[str, Any], None]) -> bool:
+@jpipe(produce=["training_code"])
+def training_code_is_present(produce) -> bool:
     EXPECTED_TRAIN_SCRIPT_LOCATION = "https://raw.githubusercontent.com/huggingface/nanotron/refs/heads/main/run_train.py"
 
     training_code_query = httpx.get(EXPECTED_TRAIN_SCRIPT_LOCATION)
@@ -163,59 +166,34 @@ def bbq_benchmark_is_present(produce: Callable[[str, Any], None]) -> bool:
 
 
 ## Evidence multi_ling_DS
-@jpipe(consume=[], produce=["dataset_configuration"])
-def multilingual_dataset_is_present(produce: Callable[[str, Any], None]) -> bool:
-    EXPECTED_SMOLLM3_MODEL_NAME = "smollm3-3B-final"
-    EXPECTED_PRETRAINING_LANGUAGES = [
-        "fw2-fra",
-        "fw2-spa",
-        "fw2-deu",
-        "fw2-ita",
-        "fw2-por",
-        "fw2-cmn",
-        "fw2-rus",
-        "fw2-fas",
-        "fw2-jpn",
-        "fw2-kor",
-        "fw2-hin",
-        "fw2-tha",
-        "fw2-vie",
-        "fw2-ell",
-    ]
-
-    with open(f"{RESOURCES_DIR}/pretraining/stage1_8T.yaml") as f:
-        try:
-            pretraining_stage1_run_configuration = yaml.safe_load(f)
-            # comparing the model name to be sure it is smollm3
+@jpipe(consume=["expected_smollm3_model_name", "expected_pretraining_languages", "resources_dir"], produce=["dataset_configuration"])
+def multilingual_dataset_is_present(expected_smollm3_model_name: str, expected_pretraining_languages: list[str], resources_dir: str, produce: Callable[[str, Any], None]) -> bool:
+    with open(f"{resources_dir}/pretraining/stage1_8T.yaml") as f:
+        pretraining_stage1_run_configuration = yaml.safe_load(f)
+        # comparing the model name to be sure it is smollm3
+        assert (
+            pretraining_stage1_run_configuration["general"]["project"]
+            == expected_smollm3_model_name
+        )
+        # comparing the listed datasets with the expected supported languages
+        dataset_configuration = pretraining_stage1_run_configuration["data_stages"][0][
+            "data"
+        ]["dataset"]
+        all_pretraining_datasets = dataset_configuration["dataset_read_path"]
+        for pretraining_language in expected_pretraining_languages:
             assert (
-                pretraining_stage1_run_configuration["general"]["project"]
-                == EXPECTED_SMOLLM3_MODEL_NAME
-            )
-            # comparing the listed datasets with the expected supported languages
-            dataset_configuration = pretraining_stage1_run_configuration["data_stages"][
-                0
-            ]["data"]["dataset"]
-            all_pretraining_datasets = dataset_configuration["dataset_read_path"]
-            for pretraining_language in EXPECTED_PRETRAINING_LANGUAGES:
-                assert (
-                    f"/scratch/smollm3-data-part1/{pretraining_language}"
-                    in all_pretraining_datasets
-                ), f"missing language [{pretraining_language}] in pretraining datasets"
-            produce("dataset_configuration", dataset_configuration)
-            return True
-        except (yaml.YAMLError, AssertionError) as exc:
-            print(exc)
-            return False
+                f"/scratch/smollm3-data-part1/{pretraining_language}"
+                in all_pretraining_datasets
+            ), f"missing language [{pretraining_language}] in pretraining datasets"
+        produce("dataset_configuration", dataset_configuration)
+    return True
 
 
 ## Evidence evaluated_code
-@jpipe(consume=[], produce=["evaluation_procedure"])
-def evaluation_code_is_present(produce: Callable[[str, Any], None]) -> bool:
-    EXPECTED_EVALUATION_README_LOCATION = "https://raw.githubusercontent.com/huggingface/smollm/refs/heads/main/text/evaluation/smollm3/README.md"
-
-    evaluation_readme_query = httpx.get(EXPECTED_EVALUATION_README_LOCATION)
+@jpipe(consume=["expected_evaluation_readme_location"], produce=["evaluation_procedure"])
+def evaluation_code_is_present(expected_evaluation_readme_location: str, produce) -> bool:
+    # expected_evaluation_readme_location = https://raw.githubusercontent.com/huggingface/smollm/refs/heads/main/text/evaluation/smollm3/README.md
+    evaluation_readme_query = httpx.get(expected_evaluation_readme_location)
     evaluation_readme_query.raise_for_status()
-
     produce("evaluation_procedure", evaluation_readme_query.text)
-
     return True
