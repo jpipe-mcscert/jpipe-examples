@@ -1,0 +1,129 @@
+######
+## Justification final
+######
+
+## Strategy all_risks
+def aggregating_all_catastrophic_risks_and_severe_harms_metrics() -> bool:
+    return True
+
+## Evidence NIAH
+def needle_in_a_haystack_benchmark_is_present() -> bool:
+    return True
+
+## Strategy bias_strat
+def assessing_bias() -> bool:
+    return True
+
+## Strategy safety_strat
+def checking_if_safety_strat_are_available() -> bool:
+    return True
+
+## Strategy chemical_strat
+def assessing_chemical_risk_level() -> bool:
+    return True
+
+## Evidence ctf
+def capture-the-flag_challenges_are_available() -> bool:
+    return True
+
+## Strategy all_safety
+def aggregating_all_prevention_misuse_measures_and_enforcement_of_safe_behavior() -> bool:
+    return True
+
+## Strategy fact_acc_strat
+def evaluating_the_factual_accuracy_of_the_model() -> bool:
+    return True
+
+## Evidence model
+def model_is_trained_and_available() -> bool:
+    return True
+
+## Evidence discrimination_ds
+def discrimination_dataset_exist() -> bool:
+    return True
+
+## Strategy cyber_strat
+def assessing_cyber_capabilities() -> bool:
+    return True
+
+## Strategy ara_strat
+def evaluating_ara_capabilities_of_the_models() -> bool:
+    return True
+
+## Conclusion c
+def this_model_is_safe_and_secure() -> bool:
+    return True
+
+## Strategy disc_strat
+def assessing_discrimination_over_different_demographic_groups() -> bool:
+    return True
+
+## Strategy biological_strat
+def assessing_biological_risks_level() -> bool:
+    return True
+
+## Evidence red_teaming
+def red-teaming_is_available() -> bool:
+    return True
+
+## Evidence ara_list
+def list_of_ara_tasks_is_available() -> bool:
+    return True
+
+## Evidence multi_factual
+def multi-factual_benchmark_is_present() -> bool:
+    return True
+
+## Evidence control
+def control_group_with_access_to_google_is_available() -> bool:
+    return True
+
+## Strategy long_context_strat
+def evaluating_the_long_context_performance_of_the_model() -> bool:
+    return True
+
+## Evidence oneHundredQ_hard
+def onehundredq_hard_benchmark_is_present() -> bool:
+    return True
+
+## Strategy all_social_risks
+def aggregating_all_social_metrics() -> bool:
+    return True
+
+## Evidence safety_policy
+def safety_policies/measures_exists() -> bool:
+    return True
+
+## Strategy strat
+def ensuring_that_the_model_provide_factual_information() -> bool:
+    return True
+
+## Evidence quality
+def quality_benchmark_is_present() -> bool:
+    return True
+
+## Evidence bbq
+def bbq_benchmark_exist() -> bool:
+    return True
+
+## Strategy cbrn_strat
+def assessing_cbrn_risks_levels() -> bool:
+    return True
+
+## Evidence easymedium_QA
+def easy-medium_qa_benchmark_is_present() -> bool:
+    return True
+
+## Strategy AND
+def combining_safety_and_security_implementations/evaluations() -> bool:
+    return True
+
+## Strategy discovery_exploit
+def evaluating_vulnerability_discovery_and_exploit_development_capabilities() -> bool:
+    return True
+
+## Evidence experts
+def specifc_experts_are_available() -> bool:
+    return True
+
+

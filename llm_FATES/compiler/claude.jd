@@ -1,0 +1,124 @@
+justification safe_behavior {
+    conclusion safety is "Prevention of misuse and ensure safe behavior"
+    strategy all_safety is "Aggregating all prevention misuse measures and enforcement of safe behavior"
+    all_safety supports safety
+    sub-conclusion fact_acc_accept is "Factual information are found in the model"
+    fact_acc_accept supports all_safety
+    strategy strat is "Ensuring that the model provide factual information"
+    strat supports fact_acc_accept
+    sub-conclusion fact_acc is "Factual accuracy is acceptable"
+    sub-conclusion long_context is "Long-context information retrieval is acceptable"
+    fact_acc supports strat
+    long_context supports strat
+    strategy fact_acc_strat is "Evaluating the factual accuracy of the model"
+    fact_acc_strat supports fact_acc
+    evidence oneHundredQ_hard is "OneHundredQ_Hard benchmark is present"
+    evidence easymedium_QA is "Easy-Medium QA benchmark is present"
+    evidence multi_factual is "Multi-factual benchmark is present"
+    oneHundredQ_hard supports fact_acc_strat
+    easymedium_QA supports fact_acc_strat
+    multi_factual supports fact_acc_strat
+    strategy long_context_strat is "Evaluating the long context performance of the model"
+    long_context_strat supports long_context
+    evidence quality is "QuaLITY benchmark is present"
+    evidence NIAH is "Needle in A Haystack benchmark is present"
+    quality supports long_context_strat
+    NIAH supports long_context_strat
+    evidence model is "Model is trained and available"
+    model supports fact_acc_strat
+    model supports long_context_strat
+
+    sub-conclusion safety_policy_accept is "Safety policies/measures are implemented"
+    safety_policy_accept supports all_safety
+    strategy safety_strat is "Checking if safety_strat are available"
+    safety_strat supports safety_policy_accept
+    evidence safety_policy is "Safety policies/measures exists"
+    safety_policy supports safety_strat
+
+}
+
+justification risks_harms {
+    conclusion risks is "Mitigate catastrophic risks and severe harms"
+    strategy all_risks is "Aggregating all catastrophic risks and severe harms metrics"
+    all_risks supports risks
+    sub-conclusion ara is "Autonomous, Replication, Adaptation evaluations are acceptable"
+    ara supports all_risks
+    strategy ara_strat is "Evaluating ARA capabilities of the models"
+    ara_strat supports ara
+    evidence ara_list is "List of ARA tasks is available"
+    ara_list supports ara_strat
+    evidence model is "Model is trained and available"
+    model supports ara_strat
+
+    sub-conclusion cbrn is "Chemical, Biological, Radiological, Nuclear capabilities are acceptable"
+    cbrn supports all_risks
+    strategy cbrn_strat is "Assessing CBRN risks levels"
+    cbrn_strat supports cbrn
+    sub-conclusion chemical is "Chemical risks level are acceptable"
+    chemical supports cbrn_strat
+    strategy chemical_strat is "Assessing chemical risk level"
+    chemical_strat supports chemical
+    evidence red_teaming is "Red-teaming is available"
+    evidence experts is "Specifc experts are available"
+    red_teaming supports chemical_strat
+    experts supports chemical_strat
+    model supports chemical_strat
+    sub-conclusion biological is "Biological risks level are acceptable"
+    biological supports cbrn_strat
+    strategy biological_strat is "Assessing biological risks level"
+    biological_strat supports biological
+    evidence control is "Control group with access to Google is available"
+    control supports biological_strat
+    red_teaming supports biological_strat
+    experts supports biological_strat
+    model supports biological_strat
+
+    sub-conclusion cyber is "Cyber capabilities are acceptable"
+    cyber supports all_risks
+    strategy cyber_strat is "Assessing cyber capabilities"
+    cyber_strat supports cyber
+    sub-conclusion discovery is "Expert vulnerability discovery capabilities are acceptable"
+    sub-conclusion exploit is "Expert exploit development are acceptable"
+    discovery supports cyber_strat
+    exploit supports cyber_strat
+    strategy discovery_exploit is "Evaluating vulnerability discovery and exploit development capabilities"
+    discovery_exploit supports discovery
+    discovery_exploit supports exploit
+    evidence ctf is "Capture-the-flag challenges are available"
+    ctf supports discovery_exploit
+    experts supports discovery_exploit
+    red_teaming supports discovery_exploit
+    model supports discovery_exploit
+}
+
+justification social_risks {
+    conclusion social_risks_eval is "Identifying and mitigating social risks"
+    strategy all_social_risks is "Aggregating all social metrics"
+    all_social_risks supports social_risks_eval
+    
+    sub-conclusion discrimination is "Mitigating discrimination over different demographic groups"
+    discrimination supports all_social_risks
+    strategy disc_strat is "Assessing discrimination over different demographic groups"
+    disc_strat supports discrimination
+    evidence discrimination_ds is "Discrimination dataset exist"
+    evidence model is "Model is trained and available"
+    discrimination_ds supports disc_strat
+    model supports disc_strat
+
+    sub-conclusion bias is "Mitigating bias over different demographic groups"
+    bias supports all_social_risks
+    strategy bias_strat is "Assessing bias"
+    bias_strat supports bias
+    evidence bbq is "BBQ benchmark exist"
+    bbq supports bias_strat
+    model supports bias_strat
+
+}
+
+composition {
+    justification final is assemble(safe_behavior, risks_harms, social_risks){
+        conclusionLabel: "This model is safe and secure"
+        strategyLabel: "Combining safety and security implementations/evaluations"
+    }
+}
+

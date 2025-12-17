@@ -1,0 +1,475 @@
+{
+  "elements": [
+    {
+      "id": "all_risks",
+      "label": "Aggregating all catastrophic risks and severe harms metrics",
+      "type": "strategy"
+    },
+    {
+      "id": "NIAH",
+      "label": "Needle in A Haystack benchmark is present",
+      "type": "evidence"
+    },
+    {
+      "id": "bias_strat",
+      "label": "Assessing bias",
+      "type": "strategy"
+    },
+    {
+      "id": "fact_acc_accept",
+      "label": "Factual information are found in the model",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "safety_strat",
+      "label": "Checking if safety_strat are available",
+      "type": "strategy"
+    },
+    {
+      "id": "ara",
+      "label": "Autonomous, Replication, Adaptation evaluations are acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "chemical_strat",
+      "label": "Assessing chemical risk level",
+      "type": "strategy"
+    },
+    {
+      "id": "ctf",
+      "label": "Capture-the-flag challenges are available",
+      "type": "evidence"
+    },
+    {
+      "id": "all_safety",
+      "label": "Aggregating all prevention misuse measures and enforcement of safe behavior",
+      "type": "strategy"
+    },
+    {
+      "id": "long_context",
+      "label": "Long-context information retrieval is acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "safety",
+      "label": "Prevention of misuse and ensure safe behavior",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "bias",
+      "label": "Mitigating bias over different demographic groups",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "fact_acc_strat",
+      "label": "Evaluating the factual accuracy of the model",
+      "type": "strategy"
+    },
+    {
+      "id": "discrimination",
+      "label": "Mitigating discrimination over different demographic groups",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "model",
+      "label": "Model is trained and available",
+      "type": "evidence"
+    },
+    {
+      "id": "fact_acc",
+      "label": "Factual accuracy is acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "discrimination_ds",
+      "label": "Discrimination dataset exist",
+      "type": "evidence"
+    },
+    {
+      "id": "cyber_strat",
+      "label": "Assessing cyber capabilities",
+      "type": "strategy"
+    },
+    {
+      "id": "ara_strat",
+      "label": "Evaluating ARA capabilities of the models",
+      "type": "strategy"
+    },
+    {
+      "id": "c",
+      "label": "This model is safe and secure",
+      "type": "conclusion"
+    },
+    {
+      "id": "disc_strat",
+      "label": "Assessing discrimination over different demographic groups",
+      "type": "strategy"
+    },
+    {
+      "id": "biological_strat",
+      "label": "Assessing biological risks level",
+      "type": "strategy"
+    },
+    {
+      "id": "red_teaming",
+      "label": "Red-teaming is available",
+      "type": "evidence"
+    },
+    {
+      "id": "ara_list",
+      "label": "List of ARA tasks is available",
+      "type": "evidence"
+    },
+    {
+      "id": "multi_factual",
+      "label": "Multi-factual benchmark is present",
+      "type": "evidence"
+    },
+    {
+      "id": "control",
+      "label": "Control group with access to Google is available",
+      "type": "evidence"
+    },
+    {
+      "id": "long_context_strat",
+      "label": "Evaluating the long context performance of the model",
+      "type": "strategy"
+    },
+    {
+      "id": "oneHundredQ_hard",
+      "label": "OneHundredQ_Hard benchmark is present",
+      "type": "evidence"
+    },
+    {
+      "id": "all_social_risks",
+      "label": "Aggregating all social metrics",
+      "type": "strategy"
+    },
+    {
+      "id": "social_risks_eval",
+      "label": "Identifying and mitigating social risks",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "safety_policy",
+      "label": "Safety policies/measures exists",
+      "type": "evidence"
+    },
+    {
+      "id": "strat",
+      "label": "Ensuring that the model provide factual information",
+      "type": "strategy"
+    },
+    {
+      "id": "quality",
+      "label": "QuaLITY benchmark is present",
+      "type": "evidence"
+    },
+    {
+      "id": "bbq",
+      "label": "BBQ benchmark exist",
+      "type": "evidence"
+    },
+    {
+      "id": "cyber",
+      "label": "Cyber capabilities are acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "risks",
+      "label": "Mitigate catastrophic risks and severe harms",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "cbrn_strat",
+      "label": "Assessing CBRN risks levels",
+      "type": "strategy"
+    },
+    {
+      "id": "cbrn",
+      "label": "Chemical, Biological, Radiological, Nuclear capabilities are acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "chemical",
+      "label": "Chemical risks level are acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "easymedium_QA",
+      "label": "Easy-Medium QA benchmark is present",
+      "type": "evidence"
+    },
+    {
+      "id": "discovery",
+      "label": "Expert vulnerability discovery capabilities are acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "AND",
+      "label": "Combining safety and security implementations/evaluations",
+      "type": "strategy"
+    },
+    {
+      "id": "biological",
+      "label": "Biological risks level are acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "discovery_exploit",
+      "label": "Evaluating vulnerability discovery and exploit development capabilities",
+      "type": "strategy"
+    },
+    {
+      "id": "safety_policy_accept",
+      "label": "Safety policies/measures are implemented",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "exploit",
+      "label": "Expert exploit development are acceptable",
+      "type": "sub-conclusion"
+    },
+    {
+      "id": "experts",
+      "label": "Specifc experts are available",
+      "type": "evidence"
+    }
+  ],
+  "name": "final",
+  "relations": [
+    {
+      "source": "ara",
+      "target": "all_risks"
+    },
+    {
+      "source": "cyber",
+      "target": "all_risks"
+    },
+    {
+      "source": "cbrn",
+      "target": "all_risks"
+    },
+    {
+      "source": "bbq",
+      "target": "bias_strat"
+    },
+    {
+      "source": "model",
+      "target": "bias_strat"
+    },
+    {
+      "source": "strat",
+      "target": "fact_acc_accept"
+    },
+    {
+      "source": "safety_policy",
+      "target": "safety_strat"
+    },
+    {
+      "source": "ara_strat",
+      "target": "ara"
+    },
+    {
+      "source": "red_teaming",
+      "target": "chemical_strat"
+    },
+    {
+      "source": "model",
+      "target": "chemical_strat"
+    },
+    {
+      "source": "experts",
+      "target": "chemical_strat"
+    },
+    {
+      "source": "safety_policy_accept",
+      "target": "all_safety"
+    },
+    {
+      "source": "fact_acc_accept",
+      "target": "all_safety"
+    },
+    {
+      "source": "long_context_strat",
+      "target": "long_context"
+    },
+    {
+      "source": "all_safety",
+      "target": "safety"
+    },
+    {
+      "source": "bias_strat",
+      "target": "bias"
+    },
+    {
+      "source": "easymedium_QA",
+      "target": "fact_acc_strat"
+    },
+    {
+      "source": "multi_factual",
+      "target": "fact_acc_strat"
+    },
+    {
+      "source": "model",
+      "target": "fact_acc_strat"
+    },
+    {
+      "source": "oneHundredQ_hard",
+      "target": "fact_acc_strat"
+    },
+    {
+      "source": "disc_strat",
+      "target": "discrimination"
+    },
+    {
+      "source": "fact_acc_strat",
+      "target": "fact_acc"
+    },
+    {
+      "source": "discovery",
+      "target": "cyber_strat"
+    },
+    {
+      "source": "exploit",
+      "target": "cyber_strat"
+    },
+    {
+      "source": "ara_list",
+      "target": "ara_strat"
+    },
+    {
+      "source": "model",
+      "target": "ara_strat"
+    },
+    {
+      "source": "AND",
+      "target": "c"
+    },
+    {
+      "source": "model",
+      "target": "disc_strat"
+    },
+    {
+      "source": "discrimination_ds",
+      "target": "disc_strat"
+    },
+    {
+      "source": "red_teaming",
+      "target": "biological_strat"
+    },
+    {
+      "source": "control",
+      "target": "biological_strat"
+    },
+    {
+      "source": "model",
+      "target": "biological_strat"
+    },
+    {
+      "source": "experts",
+      "target": "biological_strat"
+    },
+    {
+      "source": "NIAH",
+      "target": "long_context_strat"
+    },
+    {
+      "source": "model",
+      "target": "long_context_strat"
+    },
+    {
+      "source": "quality",
+      "target": "long_context_strat"
+    },
+    {
+      "source": "bias",
+      "target": "all_social_risks"
+    },
+    {
+      "source": "discrimination",
+      "target": "all_social_risks"
+    },
+    {
+      "source": "all_social_risks",
+      "target": "social_risks_eval"
+    },
+    {
+      "source": "long_context",
+      "target": "strat"
+    },
+    {
+      "source": "fact_acc",
+      "target": "strat"
+    },
+    {
+      "source": "cyber_strat",
+      "target": "cyber"
+    },
+    {
+      "source": "all_risks",
+      "target": "risks"
+    },
+    {
+      "source": "chemical",
+      "target": "cbrn_strat"
+    },
+    {
+      "source": "biological",
+      "target": "cbrn_strat"
+    },
+    {
+      "source": "cbrn_strat",
+      "target": "cbrn"
+    },
+    {
+      "source": "chemical_strat",
+      "target": "chemical"
+    },
+    {
+      "source": "discovery_exploit",
+      "target": "discovery"
+    },
+    {
+      "source": "risks",
+      "target": "AND"
+    },
+    {
+      "source": "safety",
+      "target": "AND"
+    },
+    {
+      "source": "social_risks_eval",
+      "target": "AND"
+    },
+    {
+      "source": "biological_strat",
+      "target": "biological"
+    },
+    {
+      "source": "ctf",
+      "target": "discovery_exploit"
+    },
+    {
+      "source": "red_teaming",
+      "target": "discovery_exploit"
+    },
+    {
+      "source": "model",
+      "target": "discovery_exploit"
+    },
+    {
+      "source": "experts",
+      "target": "discovery_exploit"
+    },
+    {
+      "source": "safety_strat",
+      "target": "safety_policy_accept"
+    },
+    {
+      "source": "discovery_exploit",
+      "target": "exploit"
+    }
+  ],
+  "type": "justification"
+}
