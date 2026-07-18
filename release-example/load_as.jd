@@ -1,0 +1,17 @@
+load "quality.jd" as templates
+
+justification readiness implements templates:quality {
+  sub-conclusion templates:quality:tested is "The code is tested"
+  strategy testing is "The test suite passes with high coverage"
+  testing supports templates:quality:tested
+  evidence suite is "The test suite passes"
+  suite supports testing
+  evidence coverage is "Coverage is above 80%"
+  coverage supports testing
+
+  sub-conclusion templates:quality:documented is "The documentation is updated"
+  strategy docs is "The changelog and API docs are current"
+  docs supports templates:quality:documented
+  evidence changelog is "The changelog is up to date"
+  changelog supports docs
+}

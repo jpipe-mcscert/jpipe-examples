@@ -1,0 +1,12 @@
+// Template model
+template quality {
+  conclusion ready is "Version 2.0 is ready to ship"
+  strategy gates is "All release gates pass"
+  gates supports ready
+
+  @support tested is "Testing is demonstrated"
+  tested supports gates
+
+  @support documented is "Documentation is demonstrated"
+  documented supports gates
+}
