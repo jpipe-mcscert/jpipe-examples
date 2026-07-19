@@ -13,7 +13,7 @@ feature or workflow without the overhead of a larger project.
 | Example | Description |
 | --- | --- |
 | [`empowrd/`](empowrd/) | Source material supporting our 2026 [*Journal of Object Technology* paper](https://www.jot.fm/contents/issue_2026_03/a14.html) (issue 2026-03). It shows how justification diagrams are captured, composed, and organized to reason about recruitment and remediation practices. See the [example's README](empowrd/README.md) for the full walkthrough. |
-| [`release-example/`](release-example/) | Source code of the tutorials featured on the jPipe website. *(Content coming soon.)* |
+| [`release-example/`](release-example/) | Source code of the [tutorials](https://www.jpipe.org/tutorials/) featured on the jPipe website. One running example — deciding whether a version is ready to ship — grows from a four-line justification into one that CI re-checks on every pull request. See the [example's README](release-example/README.md) for the file-by-tutorial map. |
 
 ## License
 
