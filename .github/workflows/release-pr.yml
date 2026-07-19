@@ -1,0 +1,26 @@
+name: Justify the release - Pull Request
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write        # push the rendered diagram to a branch
+  pull-requests: write   # comment on the pull request
+
+jobs:
+  justify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Run the jPipe justification
+        uses: jpipe-mcscert/jpipe-runner@dev
+        with:
+          working_directory: release-example
+          jd_file: "run/release.jd.json"
+          library: |
+            run/release_lib.py
+          embed_image: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
