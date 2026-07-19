@@ -30,3 +30,4 @@ jobs:
           jd_file: "run/release.jd.json"
           library: |
             run/release_lib.py
+          github-token: ${{ secrets.GITHUB_TOKEN }}
