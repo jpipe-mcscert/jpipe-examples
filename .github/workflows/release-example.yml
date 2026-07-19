@@ -1,0 +1,38 @@
+name: Justify the release
+
+on:
+  workflow_dispatch:
+    inputs:
+      changelog_version:
+        description: "Version the changelog will announce (try 2.0, then 1.9)"
+        default: "2.0"
+
+permissions:
+  contents: write        # push the generated diagram to a branch
+  pull-requests: write   # comment on a pull request
+
+jobs:
+  justify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Prepare the mock evidence
+        working-directory: release-example
+        env:
+          CHANGELOG_VERSION: ${{ inputs.changelog_version }}
+        run: |
+          mkdir -p mock
+          touch mock/tests.ok
+          echo "## $CHANGELOG_VERSION" > mock/CHANGELOG.md
+
+      - name: Run the jPipe justification
+        uses: jpipe-mcscert/jpipe-runner@v3.5.3
+        with:
+          working_directory: release-example
+          jd_file: "run/release.jd.json"
+          library: |
+            run/release_lib.py
+          embed_image: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
