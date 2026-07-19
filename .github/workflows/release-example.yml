@@ -14,6 +14,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v7
 
+      - name: Listing directories
+        working-directory: release-example
+        run: |
+          ls -lR .
+          
+
       - name: Prepare the mock evidence
         working-directory: release-example
         env:
